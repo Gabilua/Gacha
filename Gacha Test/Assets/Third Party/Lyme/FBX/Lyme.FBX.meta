@@ -1,0 +1,1517 @@
+fileFormatVersion: 2
+guid: 5709580fe6c8b3e4eb0faebedd2d9795
+ModelImporter:
+  serializedVersion: 25
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: mon_lyme_Bone01
+  - first:
+      1: 100004
+    second: mon_lyme_Bone02
+  - first:
+      1: 100006
+    second: mon_lyme_Bone03
+  - first:
+      1: 100008
+    second: mon_lyme_Bone04
+  - first:
+      1: 100010
+    second: mon_lyme_Bone05
+  - first:
+      1: 100012
+    second: mon_lyme_Bone06
+  - first:
+      1: 100014
+    second: mon_lyme_Bone07
+  - first:
+      1: 100016
+    second: mon_lyme_Bone08
+  - first:
+      1: 100018
+    second: mon_lyme_Bone09
+  - first:
+      1: 100020
+    second: mon_lyme_Bone10
+  - first:
+      1: 100022
+    second: mon_lyme_Bone11
+  - first:
+      1: 100024
+    second: mon_lyme_Bone12
+  - first:
+      1: 100026
+    second: mon_lyme_Bone13
+  - first:
+      1: 100028
+    second: mon_lyme_Bone14
+  - first:
+      1: 100030
+    second: mon_lyme_Bone15
+  - first:
+      1: 100032
+    second: mon_lyme_Bone16
+  - first:
+      1: 100034
+    second: mon_lyme_Bone17
+  - first:
+      1: 100036
+    second: mon_lyme_Bone18
+  - first:
+      1: 100038
+    second: mon_lyme_Bone19
+  - first:
+      1: 100040
+    second: mon_lyme_connectBone01
+  - first:
+      1: 100042
+    second: mon_lyme_connectBone02
+  - first:
+      1: 100044
+    second: mon_lyme_connectBone03
+  - first:
+      1: 100046
+    second: mon_lyme_connectBone04
+  - first:
+      1: 100048
+    second: mon_lyme_connectBone05
+  - first:
+      1: 100050
+    second: mon_lyme_connectBone06
+  - first:
+      1: 100052
+    second: Monster_Lyme
+  - first:
+      1: 100054
+    second: World_Center_Mon_Lyme
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: mon_lyme_Bone01
+  - first:
+      4: 400004
+    second: mon_lyme_Bone02
+  - first:
+      4: 400006
+    second: mon_lyme_Bone03
+  - first:
+      4: 400008
+    second: mon_lyme_Bone04
+  - first:
+      4: 400010
+    second: mon_lyme_Bone05
+  - first:
+      4: 400012
+    second: mon_lyme_Bone06
+  - first:
+      4: 400014
+    second: mon_lyme_Bone07
+  - first:
+      4: 400016
+    second: mon_lyme_Bone08
+  - first:
+      4: 400018
+    second: mon_lyme_Bone09
+  - first:
+      4: 400020
+    second: mon_lyme_Bone10
+  - first:
+      4: 400022
+    second: mon_lyme_Bone11
+  - first:
+      4: 400024
+    second: mon_lyme_Bone12
+  - first:
+      4: 400026
+    second: mon_lyme_Bone13
+  - first:
+      4: 400028
+    second: mon_lyme_Bone14
+  - first:
+      4: 400030
+    second: mon_lyme_Bone15
+  - first:
+      4: 400032
+    second: mon_lyme_Bone16
+  - first:
+      4: 400034
+    second: mon_lyme_Bone17
+  - first:
+      4: 400036
+    second: mon_lyme_Bone18
+  - first:
+      4: 400038
+    second: mon_lyme_Bone19
+  - first:
+      4: 400040
+    second: mon_lyme_connectBone01
+  - first:
+      4: 400042
+    second: mon_lyme_connectBone02
+  - first:
+      4: 400044
+    second: mon_lyme_connectBone03
+  - first:
+      4: 400046
+    second: mon_lyme_connectBone04
+  - first:
+      4: 400048
+    second: mon_lyme_connectBone05
+  - first:
+      4: 400050
+    second: mon_lyme_connectBone06
+  - first:
+      4: 400052
+    second: Monster_Lyme
+  - first:
+      4: 400054
+    second: World_Center_Mon_Lyme
+  - first:
+      43: 4300000
+    second: Monster_Lyme
+  - first:
+      74: 7400000
+    second: Lyme@Idle
+  - first:
+      74: 7400002
+    second: Lyme@Emotion
+  - first:
+      74: 7400004
+    second: Lyme@Move
+  - first:
+      74: 7400006
+    second: Lyme@Rest1
+  - first:
+      74: 7400008
+    second: Lyme@Rest2
+  - first:
+      74: 7400010
+    second: Lyme@Attack1
+  - first:
+      74: 7400012
+    second: Lyme@Attack2
+  - first:
+      74: 7400014
+    second: Lyme@Attack3
+  - first:
+      74: 7400016
+    second: Lyme@StrikeDamage1
+  - first:
+      74: 7400018
+    second: Lyme@StrikeDamage2
+  - first:
+      74: 7400020
+    second: Lyme@Standup
+  - first:
+      74: 7400022
+    second: Lyme@HurtFront
+  - first:
+      74: 7400024
+    second: Lyme@HurtBack
+  - first:
+      74: 7400026
+    second: Lyme@Die
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Monster_Lyme
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Lyme@Idle
+      takeName: Take 001
+      internalID: 7400000
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lyme@Emotion
+      takeName: Take 001
+      internalID: 7400002
+      firstFrame: 50
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lyme@Move
+      takeName: Take 001
+      internalID: 7400004
+      firstFrame: 90
+      lastFrame: 105
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lyme@Rest1
+      takeName: Take 001
+      internalID: 7400006
+      firstFrame: 120
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lyme@Rest2
+      takeName: Take 001
+      internalID: 7400008
+      firstFrame: 160
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lyme@Attack1
+      takeName: Take 001
+      internalID: 7400010
+      firstFrame: 210
+      lastFrame: 230
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.34286302
+        functionName: EnableBaseAttackCollision
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5026146
+        functionName: DisableBaseAttackCollision
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lyme@Attack2
+      takeName: Take 001
+      internalID: 7400012
+      firstFrame: 240
+      lastFrame: 260
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lyme@Attack3
+      takeName: Take 001
+      internalID: 7400014
+      firstFrame: 270
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lyme@StrikeDamage1
+      takeName: Take 001
+      internalID: 7400016
+      firstFrame: 311
+      lastFrame: 350
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lyme@StrikeDamage2
+      takeName: Take 001
+      internalID: 7400018
+      firstFrame: 362
+      lastFrame: 400
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lyme@Standup
+      takeName: Take 001
+      internalID: 7400020
+      firstFrame: 410
+      lastFrame: 430
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lyme@HurtFront
+      takeName: Take 001
+      internalID: 7400022
+      firstFrame: 442
+      lastFrame: 460
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lyme@HurtBack
+      takeName: Take 001
+      internalID: 7400024
+      firstFrame: 472
+      lastFrame: 490
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lyme@Die
+      takeName: Take 001
+      internalID: 7400026
+      firstFrame: 500
+      lastFrame: 560
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Monster_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_Bone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone01/mon_lyme_Bone05/mon_lyme_Bone06/mon_lyme_Bone07
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone02/mon_lyme_Bone08/mon_lyme_Bone09/mon_lyme_Bone10
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_Bone03/mon_lyme_connectBone03/mon_lyme_Bone11/mon_lyme_Bone12/mon_lyme_Bone13
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone05/mon_lyme_Bone18/mon_lyme_Bone19
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_Bone02/mon_lyme_connectBone06/mon_lyme_Bone14/mon_lyme_Bone15
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16
+        weight: 1
+      - path: World_Center_Mon_Lyme/mon_lyme_Bone01/mon_lyme_connectBone04/mon_lyme_Bone16/mon_lyme_Bone17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 5
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 5
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
