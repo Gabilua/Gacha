@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] NavMeshAgent myself;
     [SerializeField] CombatManager combat;
-    [SerializeField] Animator anim;
+    public Animator anim;
     [SerializeField] LayerMask targetable;
     public Transform target, combatTarget, objectiveTarget;
 
@@ -102,12 +102,12 @@ public class EnemyController : MonoBehaviour
 
         if (isEngaging)
         {
-            attackTimer -= Time.deltaTime;
+            attackTimer += Time.deltaTime;
 
-            if (attackTimer <= 0)
+            if (attackTimer >= attackRate && !combat.isDead)
             {
                 anim.SetTrigger("Engage");
-                attackTimer = attackRate;
+                attackTimer = 0;
             }
         }
     }

@@ -8,6 +8,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] EnemyController myUnit;
     [SerializeField] PlayerController myPlayer;
 
+    [SerializeField] ParticleSystem hitFX;
     public float currentHealth, maxHealth;
     public float[] baseAtkDmg;
     public float corpseTime;
@@ -26,6 +27,12 @@ public class CombatManager : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+    private void Update()
+    {
+        if (healthBar && healthBar.gameObject.activeInHierarchy)
+            healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, currentHealth / maxHealth, 5* Time.deltaTime);
+    }
+
     void Death()
     {
         if (!isDead)
@@ -39,8 +46,8 @@ public class CombatManager : MonoBehaviour
 
     void EnemyDeath()
     {
-        Invoke("Destruction", corpseTime);
         healthBar.gameObject.SetActive(false);
+        Invoke("Destruction", corpseTime);
         GameManager.instance.EnemyKilled();
     }
 
@@ -60,7 +67,7 @@ public class CombatManager : MonoBehaviour
         }
         else
         {
-            currentHealth -= amount;
+            currentHealth -= amount;            
         }
 
         if (myPlayer != null)
@@ -70,8 +77,10 @@ public class CombatManager : MonoBehaviour
             if (!healthBar.transform.parent.gameObject.activeInHierarchy)
                 healthBar.transform.parent.gameObject.SetActive(true);
 
-            healthBar.fillAmount = currentHealth / maxHealth;
+            myUnit.anim.SetTrigger("Hurt");
         }
+
+        hitFX.Play();
     }
 
     float DealDamage(string source)
@@ -81,7 +90,10 @@ public class CombatManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Damage" && other.GetComponentInParent<CombatManager>() != this)
-            ReceiveDamage(other.GetComponentInParent<CombatManager>().DealDamage(other.name));
+        if (!isDead)
+        {
+            if (other.tag == "Damage" && other.GetComponentInParent<CombatManager>() != this)
+                ReceiveDamage(other.GetComponentInParent<CombatManager>().DealDamage(other.name));
+        }
     }
 }
