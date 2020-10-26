@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 move;
     public bool isGrounded, canMove, isMoving, isIdle, isAttacking;
 
-    float attackTimer;
+    float attackTimer, aggroTimer;
     float x, z, distToGround, dir;
     Vector3 addedForce, nextPos;
 
@@ -167,7 +167,9 @@ public class PlayerController : MonoBehaviour
     public void BasicAttack()
     {
         if (isIdle)
-            isIdle = false;
+            equipment.Unsheath();
+
+        aggroTimer = 5;
 
         if (anim.GetCurrentAnimatorStateInfo(1).IsName("None") && attackTimer <= 0)
         {
@@ -211,6 +213,19 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (aggroTimer > 0)
+        {
+            aggroTimer -= Time.deltaTime;
+
+            if (isIdle)
+                isIdle = false;
+        }
+        else
+        {
+            if (!isIdle)
+                isIdle = true;
+        }
+
         MovementAllower();
 
         InputCheck();

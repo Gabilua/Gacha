@@ -9,6 +9,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] PlayerController myPlayer;
 
     [SerializeField] ParticleSystem hitFX;
+    [SerializeField] GameObject deathFX;
     public float currentHealth, maxHealth;
     public float[] baseAtkDmg;
     public float corpseTime;
@@ -46,6 +47,7 @@ public class CombatManager : MonoBehaviour
 
     void EnemyDeath()
     {
+        myUnit.anim.SetTrigger("Death");
         healthBar.gameObject.SetActive(false);
         Invoke("Destruction", corpseTime);
         GameManager.instance.EnemyKilled();
@@ -53,6 +55,9 @@ public class CombatManager : MonoBehaviour
 
     public void Destruction()
     {
+        GameObject fx = Instantiate(deathFX, hitFX.transform.position, deathFX.transform.rotation);
+        Destroy(fx, 2f);
+
         Destroy(gameObject);
     }
 

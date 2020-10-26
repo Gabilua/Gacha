@@ -24,12 +24,14 @@ public class MissionListElement : MonoBehaviour
 
         GameManager.instance.currentMissionRoyalsReward = calculatedRoyalsReward;
         GameManager.instance.currentMissionStardustReward = calculatedStardustReward;
+
+        GameManager.instance.currentMissionUiElement = gameObject;
     }
 
-    private void OnEnable()
+    public void SetupMissionUI(string area)
     {
         icon.sprite = myMission.icon;
-        title.text = myMission.missionTitle;
+        title.text = area + " - "+ myMission.missionTitle;
         description.text = myMission.missionDescription;
 
         calculatedRoyalsReward = GameManager.instance.CalculateRoyalRewards(myMission);

@@ -47,12 +47,19 @@ public class EnemyController : MonoBehaviour
 
         combat.healthBar.transform.parent.transform.parent.LookAt(new Vector3(GameManager.instance.cam.transform.position.x, combat.healthBar.transform.parent.transform.parent.position.y, GameManager.instance.cam.transform.position.z));
 
-        if (!combat.isDead)
-        {
+
             TargetSorting();
 
             Move();
             Combat();
+
+        if (combat.isDead)
+        {
+            combatTarget = null;
+            target = null;
+            isAggro = false;
+            attackTimer = 0;
+            isEngaging = false;
         }
     }
 
@@ -97,14 +104,14 @@ public class EnemyController : MonoBehaviour
 
     void Combat()
     {
-        if (!combatTarget)
+        if (!combatTarget && !combat.isDead)
             AggroDetection();
 
         if (isEngaging)
         {
             attackTimer += Time.deltaTime;
 
-            if (attackTimer >= attackRate && !combat.isDead)
+            if (attackTimer >= attackRate)
             {
                 anim.SetTrigger("Engage");
                 attackTimer = 0;

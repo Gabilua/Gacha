@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [Header("Mission Generation")]
     [SerializeField] Mission[] availableMissions;
     public Mission currentMission;
+    public GameObject currentMissionUiElement;
     public float missionTileAmount;
     public int missionEnemyAmount;
 
@@ -76,7 +77,13 @@ public class GameManager : MonoBehaviour
         UIManager.instance.StartCoroutine("LoadingScreen");
         UIManager.instance.ToggleHomeCheckScreen(false);
         UIManager.instance.ToggleProgressCheckScreen(false);
-        Rewards();
+
+        if (missionSuccess)
+        {
+            Rewards();
+            Destroy(currentMissionUiElement);
+        }
+
         DestroyLevel();
 
         UIManager.instance.ToggleMainMenu(false);
@@ -164,6 +171,7 @@ public class GameManager : MonoBehaviour
         currentMissionExpReward = 0;
         currentMissionRoyalsReward = 0;
         currentMissionStardustReward = 0;
+        currentMissionUiElement = null;
         currentMission = null;
 
         missionSuccess = false;

@@ -9640,7 +9640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 608006319382010308}
   m_Layer: 0
-  m_Name: Town
+  m_Name: Newgale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11132,7 +11132,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.45
+      value: 0.7
       mode: 0
       spread: 0
       speed:
@@ -16347,7 +16347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eefef849f61f304d85cc6375ab807d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: {x: 0, y: 0, z: 5}
+  rotationSpeed: {x: 0, y: 0, z: 15}
 --- !u!1 &4395409168751728393
 GameObject:
   m_ObjectHideFlags: 0
