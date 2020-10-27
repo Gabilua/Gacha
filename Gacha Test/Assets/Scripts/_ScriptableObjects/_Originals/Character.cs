@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "New Character", menuName = "Characters")]
 public class Character : ScriptableObject
 {
     public string characterName;
+    public int ID;
+    public int element;
+
     public int level;
     public int currentExperience;
     public float maxHP;
@@ -15,4 +19,8 @@ public class Character : ScriptableObject
     public float critRate;
     public float critDmg;
     public float recharge;
+
+    public Avatar animatorAvatar;
+    public Sprite icon;
 }
+

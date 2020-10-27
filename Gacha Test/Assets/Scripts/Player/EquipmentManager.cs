@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EquipmentManager : MonoBehaviour
 {
-    [SerializeField] GameObject currentWeapon, currentShield;
-    [SerializeField] Transform[] activeEquipment, idleEquipment;
+    public GameObject currentWeapon, currentShield;
+    public Transform[] activeEquipment, idleEquipment;
 
     public void Sheath()
     {

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [Header("References")]
-    [SerializeField] PlayerController player;
+    public PlayerController player;
     public SaveData save;
     [SerializeField] Transform generatedLevel, spawnedMobGroups, playerSpawn;
     [SerializeField] GameObject townLevel;

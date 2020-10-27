@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class MissionManager : MonoBehaviour
 {
     public Town currentTown;
-    [SerializeField] RectTransform missionList;
     [SerializeField] GameObject missionListElement;
 
     private void Start()
@@ -17,7 +16,7 @@ public class MissionManager : MonoBehaviour
 
     void DeleteExistingMissions()
     {
-        foreach (Transform child in missionList)
+        foreach (Transform child in UIManager.instance.missionList)
         {
             Destroy(child.gameObject);
         }
@@ -27,7 +26,7 @@ public class MissionManager : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            GameObject element = Instantiate(missionListElement, missionList);
+            GameObject element = Instantiate(missionListElement, UIManager.instance.missionList);
             element.GetComponent<MissionListElement>().SetupMissionUI(currentTown.townAreas[0]);
         }
     }

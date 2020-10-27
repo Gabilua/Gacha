@@ -11,13 +11,14 @@ public class UIManager : MonoBehaviour
     [Header("General")]
     [SerializeField] GameObject homeButton;
     [SerializeField] GameObject combatHUD, generalHUD, mainMenu, missionsTab, loadingScreen, homeCheckScreen, progressCheckScreen;
-    [SerializeField] RectTransform missionList;
+    public RectTransform missionList, partyCharacters;
     [SerializeField] TextMeshProUGUI missionDescription, missionProgress;
     [SerializeField] Image missionIcon;
     [SerializeField] TextMeshProUGUI royalsCounter;
     [SerializeField] TextMeshProUGUI stardustCounter;
     [SerializeField] TextMeshProUGUI royalsRewardDisplay;
     [SerializeField] TextMeshProUGUI stardustRewardDisplay;
+    [SerializeField] GameObject partyCharacterUIPrefab;
 
     [Header("Combat")]
     [SerializeField] Image healthBar;
@@ -25,11 +26,17 @@ public class UIManager : MonoBehaviour
 
     [Header("Configurations")]
     [SerializeField] float loadingTime;
+    public Color[] elementColors;
 
     private void Awake()
     {
         if (!instance)
             instance = this;
+    }
+
+    private void Start()
+    {
+        PopulatePartyUI();
     }
 
     void ButtonManagement()
@@ -38,6 +45,23 @@ public class UIManager : MonoBehaviour
             homeButton.SetActive(false);
         else
             homeButton.SetActive(true);
+    }
+
+    void PopulatePartyUI()
+    {
+        for (int i = 0; i < GameManager.instance.player.GetComponent<PlayerCombat>().currentParty.Length; i++)
+        {
+            if(GameManager.instance.player.GetComponent<PlayerCombat>().currentParty[i] != null && GameManager.instance.player.GetComponent<PlayerCombat>().currentParty[i] != GameManager.instance.player.GetComponent<PlayerCombat>().activeCharacterInfo)
+            {
+                NewCharacterPartyUIElement(GameManager.instance.player.GetComponent<PlayerCombat>().currentParty[i]);
+            }
+        }
+    }
+
+    public void NewCharacterPartyUIElement(Character character)
+    {
+        GameObject ui = Instantiate(partyCharacterUIPrefab, partyCharacters);
+        ui.GetComponent<PartyCharacterDisplay>().myCharacter = character;
     }
 
     public void UpdateHealthBar(float currentValue, float maxValue)
