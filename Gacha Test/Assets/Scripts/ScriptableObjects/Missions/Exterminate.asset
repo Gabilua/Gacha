@@ -15,7 +15,7 @@ MonoBehaviour:
   missionType: 0
   missionTitle: Exterminate
   missionDescription: Defeat All Enemies
-  icon: {fileID: 21300000, guid: 0cc46b5d2e589564e9b331d8b469f49e, type: 3}
+  icon: {fileID: 21300000, guid: c06cfb1e7670b4c5aab444df933905b7, type: 3}
   tileAmountInterval: {x: 2, y: 3}
   tilePool:
   - {fileID: 3054348829997917187, guid: a85dee1457928f84ea26452fc7ca4004, type: 3}

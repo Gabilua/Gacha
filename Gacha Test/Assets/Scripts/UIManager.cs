@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateHealthBar(float currentValue, float maxValue)
     {
-        healthBar.fillAmount = currentValue / maxValue;
+        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, currentValue / maxValue, 5 * Time.deltaTime);
         healthValue.text = currentValue.ToString("F0")+" / "+maxValue.ToString("F0");
     }
 

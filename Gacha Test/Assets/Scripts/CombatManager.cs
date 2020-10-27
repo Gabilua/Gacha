@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour
 {
-    [SerializeField] EnemyController myUnit;
-    [SerializeField] PlayerController myPlayer;
+    public ParticleSystem hitFX;
+    public GameObject deathFX;
+    [SerializeField] Animator anim;
 
-    [SerializeField] ParticleSystem hitFX;
-    [SerializeField] GameObject deathFX;
     public float currentHealth, maxHealth;
     public float[] baseAtkDmg;
     public float corpseTime;
@@ -20,18 +19,7 @@ public class CombatManager : MonoBehaviour
 
     private void Start()
     {
-        if (GetComponent<PlayerController>())
-            myPlayer = GetComponent<PlayerController>();
-        else if (GetComponent<EnemyController>())
-            myUnit = GetComponent<EnemyController>();
-
         currentHealth = maxHealth;
-    }
-
-    private void Update()
-    {
-        if (healthBar && healthBar.gameObject.activeInHierarchy)
-            healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, currentHealth / maxHealth, 5* Time.deltaTime);
     }
 
     void Death()
@@ -40,25 +28,11 @@ public class CombatManager : MonoBehaviour
         {
             isDead = true;
 
-            if (myUnit != null)
-                EnemyDeath();
+            anim.SetTrigger("Death");
+
+            if (GetComponent<EnemyCombat>())
+                GetComponent<EnemyCombat>().EnemyDeath();
         }
-    }
-
-    void EnemyDeath()
-    {
-        myUnit.anim.SetTrigger("Death");
-        healthBar.gameObject.SetActive(false);
-        Invoke("Destruction", corpseTime);
-        GameManager.instance.EnemyKilled();
-    }
-
-    public void Destruction()
-    {
-        GameObject fx = Instantiate(deathFX, hitFX.transform.position, deathFX.transform.rotation);
-        Destroy(fx, 2f);
-
-        Destroy(gameObject);
     }
 
     void ReceiveDamage(float amount)
@@ -75,16 +49,10 @@ public class CombatManager : MonoBehaviour
             currentHealth -= amount;            
         }
 
-        if (myPlayer != null)
-            UIManager.instance.UpdateHealthBar(currentHealth, maxHealth);
-        else if (myUnit != null)
-        {
-            if (!healthBar.transform.parent.gameObject.activeInHierarchy)
-                healthBar.transform.parent.gameObject.SetActive(true);
+        if (healthBar && !healthBar.transform.parent.gameObject.activeInHierarchy)
+            healthBar.transform.parent.gameObject.SetActive(true);
 
-            myUnit.anim.SetTrigger("Hurt");
-        }
-
+        anim.SetTrigger("Hurt");
         hitFX.Play();
     }
 

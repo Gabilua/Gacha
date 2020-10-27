@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 939224747244469484}
   - component: {fileID: 939224747237165448}
   - component: {fileID: 939224747237165449}
-  - component: {fileID: 5999891960806890812}
+  - component: {fileID: 409098219543084103}
   m_Layer: 11
   m_Name: TerraSlime
   m_TagString: Untagged
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myself: {fileID: 939224747237165448}
-  combat: {fileID: 5999891960806890812}
+  combat: {fileID: 409098219543084103}
   anim: {fileID: 939224747244469484}
   targetable:
     serializedVersion: 2
@@ -980,7 +980,7 @@ MonoBehaviour:
   baseAtkCols:
   - {fileID: 6201842563690775310}
   hasObjective: 0
---- !u!114 &5999891960806890812
+--- !u!114 &409098219543084103
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -989,20 +989,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 939224747237068634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ba19cb740c40684ab942bb0f54dbae8, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b8a007619aff96479b630428a67c237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myUnit: {fileID: 0}
-  myPlayer: {fileID: 0}
   hitFX: {fileID: 5744859310978048522}
   deathFX: {fileID: 1055331492781876957, guid: 39f2f4894f3b75c478e20493ed31b66c, type: 3}
+  anim: {fileID: 939224747244469484}
   currentHealth: 0
-  maxHealth: 100
+  maxHealth: 250
   baseAtkDmg:
   - 15
   corpseTime: 1
   healthBar: {fileID: 4059101505610678194}
   isDead: 0
+  myUnit: {fileID: 939224747237165449}
 --- !u!1 &939224747237068636
 GameObject:
   m_ObjectHideFlags: 0
