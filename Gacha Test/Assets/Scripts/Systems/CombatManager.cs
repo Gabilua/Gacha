@@ -65,8 +65,17 @@ public class CombatManager : MonoBehaviour
     {
         if (!isDead)
         {
-            if (other.tag == "Damage" && other.GetComponentInParent<CombatManager>() != this)
-                ReceiveDamage(other.GetComponentInParent<CombatManager>().DealDamage(other.name));
+            if (other.tag == "Damage")
+            {
+                if (other.GetComponentInParent<CombatManager>() && other.GetComponentInParent<CombatManager>() != this)
+                    ReceiveDamage(other.GetComponentInParent<CombatManager>().DealDamage(other.name));
+
+                if (other.GetComponentInParent<Projectile>() && other.GetComponentInParent<Projectile>().player != this)
+                {
+                    ReceiveDamage(other.GetComponentInParent<Projectile>().DealDamage());
+                    other.GetComponentInParent<Projectile>().Destruct();
+                }
+            }
         }
     }
 }

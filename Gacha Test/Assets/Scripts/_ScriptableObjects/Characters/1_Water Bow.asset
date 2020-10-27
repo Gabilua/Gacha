@@ -25,5 +25,8 @@ MonoBehaviour:
   critRate: 5
   critDmg: 50
   recharge: 100
+  baseAtkProjectile: {fileID: 5319864473156583751, guid: d0f0c9ffe36f0d9458048b137fafa1ad,
+    type: 3}
   animatorAvatar: {fileID: 9000000, guid: 16c38576b298c4d438250fa6afe2682a, type: 3}
+  baseAtkCD: 1
   icon: {fileID: 21300000, guid: 86b5167afdd3cce418dc7a7c2aaa7b13, type: 3}

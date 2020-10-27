@@ -16,6 +16,8 @@ public class PlayerCombat : CombatManager
 
     private void Start()
     {
+        currentHealth = maxHealth;
+
         characterAvatars = avatarHolder.GetComponentsInChildren<CharacterAvatar>();
         ChangeActiveCharacter(3);
     }
@@ -52,6 +54,18 @@ public class PlayerCombat : CombatManager
         equipment.currentWeapon = activeCharacterAvatar.currentWeapon;
         equipment.activeEquipment[0] = activeCharacterAvatar.activeEquipment[0];
         equipment.idleEquipment[0] = activeCharacterAvatar.idleEquipment[0];
+
+        if (activeCharacterAvatar.baseAtkCols.Length > 0)
+            player.baseAtkCols = activeCharacterAvatar.baseAtkCols;
+
+        player.atkFX = activeCharacterAvatar.atkFX;
+        player.baseAtkCD = activeCharacterInfo.baseAtkCD;
+
+        if (activeCharacterAvatar.baseAtkProjectileBarrel != null)
+        {
+            player.baseAtkProjectileBarrel = activeCharacterAvatar.baseAtkProjectileBarrel;
+            player.baseAtkProjectile = activeCharacterInfo.baseAtkProjectile;
+        }
 
         player.anim.avatar = activeCharacterInfo.animatorAvatar;
         player.anim.SetFloat("WeaponType", activeCharacterInfo.weaponType);

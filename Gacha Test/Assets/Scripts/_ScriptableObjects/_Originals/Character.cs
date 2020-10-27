@@ -21,7 +21,9 @@ public class Character : ScriptableObject
     public float critDmg;
     public float recharge;
 
+    public GameObject baseAtkProjectile;
     public Avatar animatorAvatar;
+    public float baseAtkCD;
     public Sprite icon;
 }
 

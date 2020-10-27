@@ -25,7 +25,7 @@ MonoBehaviour:
   tileLenght: 80
   mobGroups:
   - {fileID: 939224747237068634, guid: bf6daadee05718f4ba9ee64b9c7a4913, type: 3}
-  mobAmount: 1
+  mobAmount: 5
   royalsAmountInterval: {x: 750, y: 1250}
   stardustAmountInterval: {x: 5, y: 15}
   expAmountInterval: {x: 0, y: 0}

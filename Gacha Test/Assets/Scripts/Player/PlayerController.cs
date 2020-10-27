@@ -25,11 +25,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float groundLevel;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] string[] playerInput;
-    [SerializeField] Collider[] baseAtkCols;
+    public Collider[] baseAtkCols;
+    public float baseAtkCD;
+    public GameObject baseAtkProjectile;
+    public Transform baseAtkProjectileBarrel;
 
     [Header("VFX")]
     [SerializeField] ParticleSystem runFX;
-    [SerializeField] ParticleSystem[] atkFX;
+    public ParticleSystem[] atkFX;
 
     [Header("Stats")]
     public Vector3 move;
@@ -166,15 +169,14 @@ public class PlayerController : MonoBehaviour
 
     public void BasicAttack()
     {
-        if (isIdle)
-            equipment.Unsheath();
+        equipment.Unsheath();
 
         aggroTimer = 5;
 
         if (anim.GetCurrentAnimatorStateInfo(1).IsName("None") && attackTimer <= 0)
         {
             anim.SetTrigger("First");
-            attackTimer = 1;
+            attackTimer = baseAtkCD;
         }
         else if (anim.GetCurrentAnimatorStateInfo(1).IsName("Attack 01"))
             anim.SetTrigger("Second");
@@ -191,6 +193,16 @@ public class PlayerController : MonoBehaviour
     public void AttackFX(int i)
     {
         atkFX[i].Play();
+    }
+
+    public void ShootBaseAtkProjectile(int i)
+    {
+        GameObject shot = Instantiate(baseAtkProjectile, baseAtkProjectileBarrel.position, baseAtkProjectileBarrel.rotation);
+        shot.GetComponent<Projectile>().damage = GetComponent<CombatManager>().baseAtkDmg[i];
+        shot.GetComponent<Projectile>().player = combat;
+
+        shot.GetComponent<Rigidbody>().AddForce(transform.forward * shot.GetComponent<Projectile>().speed, ForceMode.Impulse);
+        shot.transform.forward = transform.forward;
     }
 
     public void EnableBaseAttackCollision(int i)
