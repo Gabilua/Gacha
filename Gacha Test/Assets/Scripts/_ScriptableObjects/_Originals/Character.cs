@@ -9,6 +9,7 @@ public class Character : ScriptableObject
     public string characterName;
     public int ID;
     public int element;
+    public int weaponType;
 
     public int level;
     public int currentExperience;

@@ -5,4 +5,5 @@ using UnityEngine;
 public class CharacterAvatar : MonoBehaviour
 {
     public Transform[] activeEquipment, idleEquipment;
+    public GameObject currentWeapon, currentShield;
 }

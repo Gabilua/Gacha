@@ -42,12 +42,19 @@ public class PlayerCombat : CombatManager
 
     void SetupCharacterAvatar()
     {
+        if (activeCharacterAvatar.currentShield)
+        {
+            equipment.currentShield = activeCharacterAvatar.currentShield;
+            equipment.activeEquipment[1] = activeCharacterAvatar.activeEquipment[1];
+            equipment.idleEquipment[1] = activeCharacterAvatar.idleEquipment[1];
+        }
+
+        equipment.currentWeapon = activeCharacterAvatar.currentWeapon;
         equipment.activeEquipment[0] = activeCharacterAvatar.activeEquipment[0];
-        equipment.activeEquipment[1] = activeCharacterAvatar.activeEquipment[1];
         equipment.idleEquipment[0] = activeCharacterAvatar.idleEquipment[0];
-        equipment.idleEquipment[1] = activeCharacterAvatar.idleEquipment[1];
 
         player.anim.avatar = activeCharacterInfo.animatorAvatar;
+        player.anim.SetFloat("WeaponType", activeCharacterInfo.weaponType);
 
         if (player.isIdle)
             equipment.Sheath();
