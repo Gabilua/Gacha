@@ -6,7 +6,8 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] NavMeshAgent myself;
-    [SerializeField] CombatManager combat;
+    public Monster monsterInfo;
+    [SerializeField] EnemyCombat combat;
     public Animator anim;
     [SerializeField] LayerMask targetable;
     public Transform target, combatTarget, objectiveTarget;
@@ -20,8 +21,17 @@ public class EnemyController : MonoBehaviour
     bool isMoving, isEngaging, isAggro;
     float attackTimer;
 
+    void SetupAttributes()
+    {
+        moveSpeed = monsterInfo.moveSpeed;
+        attackRate = monsterInfo.baseAtkRate;
+        aggroRange = monsterInfo.aggroRange;
+        engageDistance = monsterInfo.engageDistance;
+    }
+
     private void Start()
     {
+        SetupAttributes();
         myself.speed = moveSpeed;
     }
 

@@ -18,13 +18,19 @@ MonoBehaviour:
   weaponType: 1
   level: 0
   currentExperience: 0
-  maxHP: 2500
-  def: 160
-  atk: 75
+  currentHealth: 2850
+  maxHP: 2850
+  def: 200
+  atk: 90
   skill: 0
   critRate: 5
   critDmg: 50
   recharge: 100
+  baseAtkMultipliers:
+  - 1
+  - 1.5
+  - 3
+  baseAtkProjectile: {fileID: 0}
   animatorAvatar: {fileID: 9000000, guid: 997a9c545ec5b8842ae7082e75be2b4e, type: 3}
   baseAtkCD: 1
   icon: {fileID: 21300000, guid: 86b5167afdd3cce418dc7a7c2aaa7b13, type: 3}

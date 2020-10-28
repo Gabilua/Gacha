@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     // Here we setup the other components we need;
     [Header("References")]
     [SerializeField] CharacterController controller;
-    public CombatManager combat;
+    public PlayerCombat combat;
     [SerializeField] bl_Joystick joystick;
     [SerializeField] EquipmentManager equipment;
     [SerializeField] Transform center;
@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour
     public void ShootBaseAtkProjectile(int i)
     {
         GameObject shot = Instantiate(baseAtkProjectile, baseAtkProjectileBarrel.position, baseAtkProjectileBarrel.rotation);
-        shot.GetComponent<Projectile>().damage = GetComponent<CombatManager>().baseAtkDmg[i];
+        shot.GetComponent<Projectile>().damage = combat.BaseAtkDamage(i.ToString());
         shot.GetComponent<Projectile>().player = combat;
 
         shot.GetComponent<Rigidbody>().AddForce(transform.forward * shot.GetComponent<Projectile>().speed, ForceMode.Impulse);

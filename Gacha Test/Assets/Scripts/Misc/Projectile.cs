@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
-    public CombatManager player;
+    public PlayerCombat player;
     public float damage;
     public float speed;
 

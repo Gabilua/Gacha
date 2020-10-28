@@ -1,10 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class EnemyCombat : CombatManager
+public class EnemyCombat : MonoBehaviour
 {
-    [SerializeField] EnemyController myUnit;
+    [SerializeField] EnemyController myMonster;
+    public ParticleSystem hitFX;
+    public GameObject deathFX;
+    public Image healthBar;
+
+    public bool isDead;
+
+    public float currentHealth;
+    public float maxHealth;
+    public float currentLevel;
+    public float def;
+    public float atk;
+    public float skill;
+    public float critRate;
+    public float critDmg;
+    public float corpseTime;
+
+    private void Start()
+    {
+        SetupAttributes();
+
+        currentHealth = maxHealth;
+    }
 
     void Update()
     {
@@ -12,12 +35,55 @@ public class EnemyCombat : CombatManager
             healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, currentHealth / maxHealth, 5 * Time.deltaTime);
     }
 
-    public void EnemyDeath()
+    void SetupAttributes()
     {
-        myUnit.anim.SetTrigger("Death");
-        healthBar.gameObject.SetActive(false);
-        Invoke("Destruction", corpseTime);
-        GameManager.instance.EnemyKilled();
+        def = myMonster.monsterInfo.def;
+        atk = myMonster.monsterInfo.atk;
+        skill = myMonster.monsterInfo.skill;
+        critRate = myMonster.monsterInfo.critRate;
+        critDmg = myMonster.monsterInfo.critDmg;
+        currentLevel = myMonster.monsterInfo.level;
+        maxHealth = myMonster.monsterInfo.maxHP;
+        corpseTime = myMonster.monsterInfo.corpseTime;
+    }
+
+    void ReceiveDamage(float amount)
+    {
+        float result = currentHealth - (amount * (100/(100+def)));
+
+        if (result <= 0)
+        {
+            currentHealth = 0;
+            Death();
+        }
+        else
+        {
+            currentHealth -= amount;
+        }
+
+        if (healthBar && !healthBar.transform.parent.gameObject.activeInHierarchy)
+            healthBar.transform.parent.gameObject.SetActive(true);
+
+        myMonster.anim.SetTrigger("Hurt");
+        hitFX.Play();
+    }
+
+    public float BaseAtkDamage(string source)
+    {
+        return Random.Range(0.9f,1.1f) * ( atk * myMonster.monsterInfo.baseAtkMultipliers[int.Parse(source)] );
+    }
+
+    void Death()
+    {
+        if (!isDead)
+        {
+            isDead = true;
+
+            myMonster.anim.SetTrigger("Death");
+            healthBar.gameObject.SetActive(false);
+            GameManager.instance.EnemyKilled();
+            Invoke("Destruction", corpseTime);
+        }
     }
 
     public void Destruction()
@@ -26,5 +92,26 @@ public class EnemyCombat : CombatManager
         Destroy(fx, 2f);
 
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isDead)
+        {
+            if (other.tag == "Damage")
+            {
+                if (other.GetComponentInParent<PlayerCombat>() && other.GetComponentInParent<PlayerCombat>() != this)
+                {
+                    if (other.GetComponentInParent<PlayerCombat>())
+                        ReceiveDamage(other.GetComponentInParent<PlayerCombat>().BaseAtkDamage(other.name));
+                }
+
+                if (other.GetComponentInParent<Projectile>())
+                {
+                    ReceiveDamage(other.GetComponentInParent<Projectile>().DealDamage());
+                    other.GetComponentInParent<Projectile>().Destruct();
+                }
+            }
+        }
     }
 }

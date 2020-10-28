@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCombat : CombatManager
+public class PlayerCombat : MonoBehaviour
 {
     [SerializeField] PlayerController player;
     [SerializeField] EquipmentManager equipment;
@@ -14,12 +14,50 @@ public class PlayerCombat : CombatManager
     [SerializeField] CharacterAvatar activeCharacterAvatar;
     public Character activeCharacterInfo;
 
+    public ParticleSystem hitFX;
+    public GameObject deathFX;
+
+    public bool isDead;
+
+    public int level;
+    public int currentExperience;
+    public float currentHealth;
+    public float maxHealth;
+    public int def;
+    public int atk;
+    public int skill;
+    public float critRate;
+    public float critDmg;
+    public float recharge;
+
+    void SetupAttributes()
+    {
+        level = activeCharacterInfo.level;
+        currentExperience = activeCharacterInfo.currentExperience;
+        currentHealth = activeCharacterInfo.currentHealth;
+        maxHealth = activeCharacterInfo.maxHP;
+        def = activeCharacterInfo.def;
+        atk = activeCharacterInfo.atk;
+        skill = activeCharacterInfo.skill;
+        critRate = activeCharacterInfo.critRate;
+        critDmg = activeCharacterInfo.critDmg;
+        recharge = activeCharacterInfo.recharge;
+    }
+
+    void WriteBackToCharacters()
+    {
+        activeCharacterInfo.level = Mathf.FloorToInt(level);
+        activeCharacterInfo.currentExperience = Mathf.FloorToInt(currentExperience);
+        activeCharacterInfo.currentHealth = Mathf.FloorToInt(currentHealth);
+    }
+
     private void Start()
     {
-        currentHealth = maxHealth;
-
         characterAvatars = avatarHolder.GetComponentsInChildren<CharacterAvatar>();
         ChangeActiveCharacter(3);
+
+        SetupAttributes();
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -29,6 +67,9 @@ public class PlayerCombat : CombatManager
 
     public void ChangeActiveCharacter(int i)
     {
+        if (activeCharacterInfo != null)
+            WriteBackToCharacters();
+
         foreach (var avatar in characterAvatars)
         {
             avatar.gameObject.SetActive(false);
@@ -40,6 +81,7 @@ public class PlayerCombat : CombatManager
         activeCharacterAvatar.gameObject.SetActive(true);
 
         SetupCharacterAvatar();
+        SetupAttributes();
     }
 
     void SetupCharacterAvatar()
@@ -74,5 +116,59 @@ public class PlayerCombat : CombatManager
             equipment.Sheath();
         else
             equipment.Unsheath();
+    }
+
+    void Death()
+    {
+        if (!isDead)
+        {
+            isDead = true;
+
+            //player.anim.SetTrigger("Death");
+        }
+    }
+
+    void ReceiveDamage(float amount)
+    {
+        float result = currentHealth - (amount * (100 / (100 + def)));
+
+        if (result <= 0)
+        {
+            currentHealth = 0;
+            Death();
+        }
+        else
+        {
+            currentHealth -= amount;
+        }
+
+        player.anim.SetTrigger("Hurt");
+        hitFX.Play();
+    }
+
+    public float BaseAtkDamage(string source)
+    {
+        return Random.Range(0.9f, 1.1f) * (atk * activeCharacterInfo.baseAtkMultipliers[int.Parse(source)]);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isDead)
+        {
+            if (other.tag == "Damage")
+            {
+                if (other.GetComponentInParent<EnemyCombat>() && other.GetComponentInParent<EnemyCombat>() != this)
+                {
+                    if (other.GetComponentInParent<EnemyCombat>())
+                        ReceiveDamage(other.GetComponentInParent<EnemyCombat>().BaseAtkDamage(other.name));
+                }
+
+                if (other.GetComponentInParent<Projectile>() && other.GetComponentInParent<Projectile>().player != this)
+                {
+                    ReceiveDamage(other.GetComponentInParent<Projectile>().DealDamage());
+                    other.GetComponentInParent<Projectile>().Destruct();
+                }
+            }
+        }
     }
 }

@@ -13,13 +13,15 @@ public class Character : ScriptableObject
 
     public int level;
     public int currentExperience;
+    public float currentHealth;
     public float maxHP;
-    public float def;
-    public float atk;
-    public float skill;
+    public int def;
+    public int atk;
+    public int skill;
     public float critRate;
     public float critDmg;
     public float recharge;
+    public float[] baseAtkMultipliers;
 
     public GameObject baseAtkProjectile;
     public Avatar animatorAvatar;
