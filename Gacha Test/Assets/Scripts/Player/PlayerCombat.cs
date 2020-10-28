@@ -64,7 +64,7 @@ public class PlayerCombat : MonoBehaviour
     {
         characterAvatars = avatarHolder.GetComponentsInChildren<CharacterAvatar>();
 
-        ChangeActiveCharacter(0);
+        ChangeActiveCharacter(4);
     }
 
     void Update()
@@ -89,6 +89,8 @@ public class PlayerCombat : MonoBehaviour
 
         SetupCharacterAvatar();
         SetupAttributes();
+
+        UIManager.instance.UpdateCurrentCharacterLevelDisplay(level); 
     }
 
     void SetupCharacterAvatar()

@@ -16,9 +16,9 @@ MonoBehaviour:
   ID: 2
   element: 2
   weaponType: 2
-  level: 0
+  level: 1
   currentExperience: 0
-  currenthP: 1
+  currenthP: 2000
   maxHP: 2000
   def: 100
   atk: 100

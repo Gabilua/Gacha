@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI stardustCounter;
     [SerializeField] TextMeshProUGUI royalsRewardDisplay;
     [SerializeField] TextMeshProUGUI stardustRewardDisplay;
+    [SerializeField] TextMeshProUGUI currentCharacterLevelDisplay;
     [SerializeField] GameObject partyCharacterUIPrefab;
 
     [Header("Combat")]
@@ -68,6 +69,11 @@ public class UIManager : MonoBehaviour
     {
         healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, currentValue / maxValue, 10 * Time.deltaTime);
         healthValue.text = currentValue.ToString("F0")+" / "+maxValue.ToString("F0");
+    }
+
+    public void UpdateCurrentCharacterLevelDisplay(int characterLevel)
+    {
+        currentCharacterLevelDisplay.text = "Lv."+characterLevel.ToString();
     }
 
     public void ToggleInnScreen(bool state)
