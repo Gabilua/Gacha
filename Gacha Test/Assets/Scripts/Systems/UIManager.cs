@@ -9,10 +9,10 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
 
     [Header("General")]
-    [SerializeField] GameObject homeButton;
-    [SerializeField] GameObject combatHUD, generalHUD, mainMenu, missionsTab, loadingScreen, homeCheckScreen, progressCheckScreen;
+    [SerializeField] GameObject homeButton, innRestButton;
+    [SerializeField] GameObject combatHUD, generalHUD, mainMenu, missionsTab, loadingScreen, homeCheckScreen, progressCheckScreen, innScreen;
     public RectTransform missionList, partyCharacters;
-    [SerializeField] TextMeshProUGUI missionDescription, missionProgress;
+    [SerializeField] TextMeshProUGUI missionDescription, missionProgress, innRestCost;
     [SerializeField] Image missionIcon;
     [SerializeField] TextMeshProUGUI royalsCounter;
     [SerializeField] TextMeshProUGUI stardustCounter;
@@ -68,6 +68,23 @@ public class UIManager : MonoBehaviour
     {
         healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, currentValue / maxValue, 10 * Time.deltaTime);
         healthValue.text = currentValue.ToString("F0")+" / "+maxValue.ToString("F0");
+    }
+
+    public void ToggleInnScreen(bool state)
+    {
+        innRestCost.text = GameManager.instance.InnRestCost().ToString();
+
+        if (GameManager.instance.InnRestCost() > 0)
+        {
+            if (GameManager.instance.InnRestCost() <= GameManager.instance.save.royals)
+                innRestButton.SetActive(true);
+            else
+                innRestButton.SetActive(false);
+        }
+        else
+            innRestButton.SetActive(false);
+
+        innScreen.SetActive(state);
     }
 
     public void ToggleHomeCheckScreen(bool state)

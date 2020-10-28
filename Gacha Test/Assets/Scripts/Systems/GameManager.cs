@@ -42,6 +42,29 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    #region TownManagement
+    public int InnRestCost()
+    {
+        int restCost = 0;
+
+        for (int i = 0; i < player.combat.currentParty.Length; i++)
+        {
+            restCost += Mathf.FloorToInt(player.combat.currentParty[i].maxHP - player.combat.currentParty[i].currenthP);
+        }
+
+        restCost /= 2;
+        return restCost;
+    }
+
+    public void InnRestHeal()
+    {
+        EarnRoyals(-InnRestCost());
+        player.combat.FullPartyMaxHeal();
+        UIManager.instance.ToggleInnScreen(false);
+
+    }
+    #endregion
+
     #region MissionManagement
     public IEnumerator StartMission(int i)
     {

@@ -259,6 +259,9 @@ public class PlayerController : MonoBehaviour
                 UIManager.instance.ToggleMissionsTab(true);
             else if (other.name == "Exit" && GameManager.instance.missionSuccess)
                 UIManager.instance.ToggleProgressCheckScreen(true);
+            else if (other.name == "Inn")
+                UIManager.instance.ToggleInnScreen(true);
+
         }
     }
 
@@ -268,6 +271,8 @@ public class PlayerController : MonoBehaviour
         {
             if (other.name == "Missions")
                 UIManager.instance.ToggleMissionsTab(false);
+            else if (other.name == "Inn")
+                UIManager.instance.ToggleInnScreen(false);
         }
     }
 }

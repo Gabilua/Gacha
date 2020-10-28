@@ -18,7 +18,7 @@ MonoBehaviour:
   weaponType: 3
   level: 0
   currentExperience: 0
-  currentHealth: 2250
+  currenthP: 1
   maxHP: 2250
   def: 125
   atk: 55

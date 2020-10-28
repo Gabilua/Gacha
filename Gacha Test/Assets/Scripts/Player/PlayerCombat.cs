@@ -34,7 +34,7 @@ public class PlayerCombat : MonoBehaviour
     {
         level = activeCharacterInfo.level;
         currentExperience = activeCharacterInfo.currentExperience;
-        currentHealth = activeCharacterInfo.currentHealth;
+        currentHealth = activeCharacterInfo.currenthP;
         maxHealth = activeCharacterInfo.maxHP;
         def = activeCharacterInfo.def;
         atk = activeCharacterInfo.atk;
@@ -48,16 +48,23 @@ public class PlayerCombat : MonoBehaviour
     {
         activeCharacterInfo.level = Mathf.FloorToInt(level);
         activeCharacterInfo.currentExperience = Mathf.FloorToInt(currentExperience);
-        activeCharacterInfo.currentHealth = Mathf.FloorToInt(currentHealth);
+        activeCharacterInfo.currenthP = Mathf.FloorToInt(currentHealth);
+    }
+
+    public void FullPartyMaxHeal()
+    {
+        foreach (var character in currentParty)
+        {
+            character.currenthP = character.maxHP;
+            SetupAttributes();
+        }
     }
 
     private void Start()
     {
         characterAvatars = avatarHolder.GetComponentsInChildren<CharacterAvatar>();
-        ChangeActiveCharacter(3);
 
-        SetupAttributes();
-        currentHealth = maxHealth;
+        ChangeActiveCharacter(0);
     }
 
     void Update()

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68057a99a1538254e8e46dbf907666b1, type: 3}
   m_Name: Save01
   m_EditorClassIdentifier: 
-  stardust: 0
-  royals: 0
+  stardust: 15
+  royals: 25000
   allCharacters:
   - {fileID: 11400000, guid: 99b84171eaa57ed4ca4a9c4780b11af5, type: 2}
   allWeapons: []

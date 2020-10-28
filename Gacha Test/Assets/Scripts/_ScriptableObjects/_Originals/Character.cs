@@ -13,7 +13,7 @@ public class Character : ScriptableObject
 
     public int level;
     public int currentExperience;
-    public float currentHealth;
+    public float currenthP;
     public float maxHP;
     public int def;
     public int atk;
