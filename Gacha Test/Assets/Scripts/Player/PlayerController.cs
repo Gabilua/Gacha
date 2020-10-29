@@ -8,22 +8,26 @@ public class PlayerController : MonoBehaviour
     // Here we setup the other components we need;
     [Header("References")]
     [SerializeField] CharacterController controller;
-    public PlayerCombat combat;
-    [SerializeField] bl_Joystick joystick;
     [SerializeField] EquipmentManager equipment;
+    [SerializeField] LayerMask targetable;
+    [SerializeField] bl_Joystick joystick;
     [SerializeField] Transform center;
+    public PlayerCombat combat;
     public GameObject GFX;
     public Animator anim;
 
     // Here we define the values for how the character moves;
     [Header("Character Attributes")]
     public float runSpeed;
-    public float turnSpeed, baseSpeed;
+    public float turnSpeed, baseSpeed, currentStamina, maxStamina, staminaRegenRate;
+    [SerializeField] float dashDistance, dashStaminaConsumption;
 
     // Here we set variables needed for the controller;
     [Header("Controller Configuration")]
     [SerializeField] float groundLevel;
     [SerializeField] LayerMask groundLayer;
+    [SerializeField] float autoAimRange;
+    [SerializeField] float iFrameDuration;
     [SerializeField] string[] playerInput;
     public Collider[] baseAtkCols;
     public float baseAtkCD;
@@ -32,13 +36,15 @@ public class PlayerController : MonoBehaviour
 
     [Header("VFX")]
     [SerializeField] ParticleSystem runFX;
+    [SerializeField] ParticleSystem dashFX;
     public ParticleSystem[] atkFX;
 
     [Header("Stats")]
     public Vector3 move;
-    public bool isGrounded, canMove, isMoving, isIdle, isAttacking;
+    public bool isGrounded, canMove, isMoving, isIdle, isAttacking, isDodging;
 
-    float attackTimer, aggroTimer;
+    Transform currentAutoTarget;
+    float attackTimer, aggroTimer, dodgeTimer, dodgeCooldown;
     float x, z, distToGround, dir;
     Vector3 addedForce, nextPos;
 
@@ -116,21 +122,11 @@ public class PlayerController : MonoBehaviour
     // Here we gradually damp the forces inside the fake force vector to 0;
     void ForceDamp()
     {
-        if (addedForce.x != 0)
-        {
-            if (addedForce.x < 0)
-                addedForce.x = Mathf.Lerp(addedForce.x, 0.0001f, 5 * Time.deltaTime);
-            else if (addedForce.x > 0)
-                addedForce.x = Mathf.Lerp(addedForce.x, -0.0001f, 5 * Time.deltaTime);
-        }
+        addedForce.x = Mathf.Lerp(addedForce.x, 0, 10 * Time.deltaTime);
+        addedForce.y = Mathf.Lerp(addedForce.y, 0, 10 * Time.deltaTime);
+        addedForce.z = Mathf.Lerp(addedForce.z, 0, 10 * Time.deltaTime);
 
-        if (addedForce.y != 0)
-        {
-            if (addedForce.y < 0)
-                addedForce.y = Mathf.Lerp(addedForce.y, 0.0001f, 5 * Time.deltaTime);
-            else if (addedForce.y > 0)
-                addedForce.y = Mathf.Lerp(addedForce.y, -0.0001f, 5 * Time.deltaTime);
-        }
+        Debug.Log(addedForce);
     }
 
     // Here we define what stops movement;
@@ -167,10 +163,52 @@ public class PlayerController : MonoBehaviour
             isAttacking = false;
     }
 
+    void AutoAim()
+    {
+        Collider[] nearbyTargets = Physics.OverlapSphere(transform.position, autoAimRange, targetable);
+        float shortestDistance = Mathf.Infinity;
+        Transform nearestTarget = null;
+
+        foreach (Collider target in nearbyTargets)
+        {
+            float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+
+            if (distanceToTarget < shortestDistance)
+            {
+                shortestDistance = distanceToTarget;
+                nearestTarget = target.transform;
+            }
+        }
+
+        if (nearestTarget != null && shortestDistance <= autoAimRange)
+            currentAutoTarget = nearestTarget;
+        else
+            currentAutoTarget = null;
+    }
+
+    public void DashDodge()
+    {
+        if(dodgeCooldown <= 0 && currentStamina - dashStaminaConsumption >= 0)
+        {
+            dashFX.Play();
+            anim.SetTrigger("Dash");
+
+            ApplyForce(transform.forward * dashDistance);
+
+            isDodging = true;
+            dodgeCooldown = 0.5f;
+            currentStamina -= dashStaminaConsumption;
+        }
+    }
+
     public void BasicAttack()
     {
-        equipment.Unsheath();
+        AutoAim();
 
+        if (currentAutoTarget != null)
+            transform.LookAt(new Vector3(currentAutoTarget.position.x, transform.position.y, currentAutoTarget.position.z));
+
+        equipment.Unsheath();
         aggroTimer = 5;
 
         if (anim.GetCurrentAnimatorStateInfo(1).IsName("None") && attackTimer <= 0)
@@ -225,6 +263,20 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        BaseAttackAndAggroStateManagement();
+
+        MovementAllower();
+        InputCheck();
+        GroundCheck();
+
+        Movement();
+        Orientation();
+        ForceDamp();
+        DodgeAndStaminaManagement();        
+    }
+
+    void BaseAttackAndAggroStateManagement()
+    {
         if (aggroTimer > 0)
         {
             aggroTimer -= Time.deltaTime;
@@ -238,17 +290,32 @@ public class PlayerController : MonoBehaviour
                 isIdle = true;
         }
 
-        MovementAllower();
-
-        InputCheck();
-        GroundCheck();
-
-        Movement();
-        Orientation();
-        ForceDamp();
-
         if (attackTimer > 0)
             attackTimer -= Time.deltaTime;
+    }
+
+    void DodgeAndStaminaManagement()
+    {
+        if (dodgeCooldown > 0)
+            dodgeCooldown -= Time.deltaTime;
+        else
+        {
+            if (currentStamina < maxStamina)
+                currentStamina += staminaRegenRate*Time.deltaTime;
+        }
+
+        if (isDodging)
+        {
+            dodgeTimer += Time.deltaTime;
+
+            if (dodgeTimer >= iFrameDuration)
+            {
+                isDodging = false;
+                dodgeTimer = 0;
+            }
+        }
+
+        UIManager.instance.UpdateStaminaBar(currentStamina, maxStamina);
     }
 
     private void OnTriggerEnter(Collider other)

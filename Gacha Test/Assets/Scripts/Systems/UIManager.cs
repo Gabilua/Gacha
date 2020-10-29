@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject combatHUD, generalHUD, mainMenu, missionsTab, loadingScreen, homeCheckScreen, progressCheckScreen, innScreen;
     public RectTransform missionList, partyCharacters;
     [SerializeField] TextMeshProUGUI missionDescription, missionProgress, innRestCost;
-    [SerializeField] Image missionIcon;
+    [SerializeField] Image missionIcon, staminaBar;
     [SerializeField] TextMeshProUGUI royalsCounter;
     [SerializeField] TextMeshProUGUI stardustCounter;
     [SerializeField] TextMeshProUGUI royalsRewardDisplay;
@@ -69,6 +69,11 @@ public class UIManager : MonoBehaviour
     {
         healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, currentValue / maxValue, 10 * Time.deltaTime);
         healthValue.text = currentValue.ToString("F0")+" / "+maxValue.ToString("F0");
+    }
+
+    public void UpdateStaminaBar(float currentValue, float maxValue)
+    {
+        staminaBar.fillAmount = Mathf.Lerp(staminaBar.fillAmount, currentValue / maxValue, 10 * Time.deltaTime);
     }
 
     public void UpdateCurrentCharacterLevelDisplay(int characterLevel)
