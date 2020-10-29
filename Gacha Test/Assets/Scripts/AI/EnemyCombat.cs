@@ -47,8 +47,14 @@ public class EnemyCombat : MonoBehaviour
         corpseTime = myMonster.monsterInfo.corpseTime;
     }
 
-    void ReceiveDamage(float amount)
+    void ReceiveDamage(float amount, PlayerCombat source)
     {
+        if (!myMonster.isAggro)
+        {
+            myMonster.combatTarget = source.transform;
+            myMonster.isAggro = true;
+        }
+
         float result = currentHealth - (amount * (100/(100+def)));
 
         if (result <= 0)
@@ -103,13 +109,13 @@ public class EnemyCombat : MonoBehaviour
                 if (other.GetComponentInParent<PlayerCombat>() && other.GetComponentInParent<PlayerCombat>() != this)
                 {
                     if (other.GetComponentInParent<PlayerCombat>())
-                        ReceiveDamage(other.GetComponentInParent<PlayerCombat>().BaseAtkDamage(other.name));
+                        ReceiveDamage(other.GetComponentInParent<PlayerCombat>().BaseAtkDamage(other.name), other.GetComponentInParent<PlayerCombat>());
                 }
 
-                if (other.GetComponentInParent<Projectile>())
+                if (other.GetComponent<Projectile>())
                 {
-                    ReceiveDamage(other.GetComponentInParent<Projectile>().DealDamage());
-                    other.GetComponentInParent<Projectile>().Destruct();
+                    ReceiveDamage(other.GetComponent<Projectile>().DealDamage(), other.GetComponent<Projectile>().player);
+                    other.GetComponent<Projectile>().Destruct();
                 }
             }
         }

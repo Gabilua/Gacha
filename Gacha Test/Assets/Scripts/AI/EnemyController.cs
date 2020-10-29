@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] Collider[] baseAtkCols;
 
     public bool hasObjective;
-    bool isMoving, isEngaging, isAggro;
+    public bool isMoving, isEngaging, isAggro;
     float attackTimer;
 
     void SetupAttributes()

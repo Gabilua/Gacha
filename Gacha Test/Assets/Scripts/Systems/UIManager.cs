@@ -29,6 +29,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] float loadingTime;
     public Color[] elementColors;
 
+    float staminaBarFadeTimer;
+
     private void Awake()
     {
         if (!instance)
@@ -74,6 +76,21 @@ public class UIManager : MonoBehaviour
     public void UpdateStaminaBar(float currentValue, float maxValue)
     {
         staminaBar.fillAmount = Mathf.Lerp(staminaBar.fillAmount, currentValue / maxValue, 10 * Time.deltaTime);
+
+        if (staminaBar.fillAmount >= 1)
+        {
+            staminaBarFadeTimer += Time.deltaTime;
+
+            if(staminaBarFadeTimer >= 1.5f)
+            {
+                staminaBar.transform.parent.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            staminaBarFadeTimer = 0;
+            staminaBar.transform.parent.gameObject.SetActive(true);
+        }
     }
 
     public void UpdateCurrentCharacterLevelDisplay(int characterLevel)
