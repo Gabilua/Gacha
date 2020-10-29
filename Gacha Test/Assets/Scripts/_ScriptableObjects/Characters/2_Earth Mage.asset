@@ -28,8 +28,8 @@ MonoBehaviour:
   recharge: 100
   baseAtkMultipliers:
   - 1
+  - 1.5
   - 2
-  - 3
   baseAtkProjectile: {fileID: 0}
   animatorAvatar: {fileID: 9000000, guid: 222126d6edb5fc34ab82b94dbbeb0b54, type: 3}
   baseAtkCD: 1.5

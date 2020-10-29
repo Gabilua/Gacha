@@ -19,7 +19,7 @@ MonoBehaviour:
   currentExperience: 0
   maxHP: 500
   def: 10
-  atk: 100
+  atk: 200
   skill: 0
   critRate: 0
   critDmg: 0

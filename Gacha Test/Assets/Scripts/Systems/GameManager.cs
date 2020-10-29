@@ -42,6 +42,39 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    #region General
+    public IEnumerator HitStop(PlayerCombat source)
+    {
+        Time.timeScale = 0;
+
+        if(source != null)
+        {
+            switch (source.activeCharacterInfo.weaponType)
+            {
+                case 0:
+                    yield return new WaitForSecondsRealtime(0.15f);
+                    break;
+                case 1:
+                    yield return new WaitForSecondsRealtime(0.35f);
+                    break;
+                case 2:
+                    yield return new WaitForSecondsRealtime(0.25f);
+                    break;
+                case 3:
+                    yield return new WaitForSecondsRealtime(0.2f);
+                    break;
+                case 4:
+                    yield return new WaitForSecondsRealtime(0.12f);
+                    break;
+            }
+        }
+        else
+            yield return new WaitForSecondsRealtime(0.15f);
+
+        Time.timeScale = 1;
+    }
+    #endregion
+
     #region TownManagement
     public int InnRestCost()
     {

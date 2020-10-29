@@ -125,8 +125,6 @@ public class PlayerController : MonoBehaviour
         addedForce.x = Mathf.Lerp(addedForce.x, 0, 10 * Time.deltaTime);
         addedForce.y = Mathf.Lerp(addedForce.y, 0, 10 * Time.deltaTime);
         addedForce.z = Mathf.Lerp(addedForce.z, 0, 10 * Time.deltaTime);
-
-        Debug.Log(addedForce);
     }
 
     // Here we define what stops movement;

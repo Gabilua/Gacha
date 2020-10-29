@@ -64,7 +64,7 @@ public class PlayerCombat : MonoBehaviour
     {
         characterAvatars = avatarHolder.GetComponentsInChildren<CharacterAvatar>();
 
-        ChangeActiveCharacter(4);
+        ChangeActiveCharacter(0);
     }
 
     void Update()
@@ -139,20 +139,24 @@ public class PlayerCombat : MonoBehaviour
 
     void ReceiveDamage(float amount)
     {
-        float result = currentHealth - (amount * (100 / (100 + def)));
+        float result = amount * 10 / def;
 
-        if (result <= 0)
+        UIManager.instance.SpawnDamageDisplay(transform.position, result);
+
+        if (currentHealth - result <= 0)
         {
             currentHealth = 0;
             Death();
         }
         else
         {
-            currentHealth -= amount;
+            currentHealth -= result;
         }
 
         player.anim.SetTrigger("Hurt");
         hitFX.Play();
+
+        GameManager.instance.StartCoroutine("HitStop", null);
     }
 
     public float BaseAtkDamage(string source)

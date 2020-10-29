@@ -29,7 +29,7 @@ MonoBehaviour:
   baseAtkMultipliers:
   - 1
   - 1.5
-  - 3
+  - 2
   baseAtkProjectile: {fileID: 0}
   animatorAvatar: {fileID: 9000000, guid: 997a9c545ec5b8842ae7082e75be2b4e, type: 3}
   baseAtkCD: 2

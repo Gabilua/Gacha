@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI royalsRewardDisplay;
     [SerializeField] TextMeshProUGUI stardustRewardDisplay;
     [SerializeField] TextMeshProUGUI currentCharacterLevelDisplay;
-    [SerializeField] GameObject partyCharacterUIPrefab;
+    [SerializeField] GameObject partyCharacterUIPrefab, damageDisplayPrefab;
 
     [Header("Combat")]
     [SerializeField] Image healthBar;
@@ -65,6 +65,13 @@ public class UIManager : MonoBehaviour
     {
         GameObject ui = Instantiate(partyCharacterUIPrefab, partyCharacters);
         ui.GetComponent<PartyCharacterDisplay>().myCharacter = character;
+    }
+
+    public void SpawnDamageDisplay(Vector3 where, float amount)
+    {
+        GameObject ui = Instantiate(damageDisplayPrefab, where, damageDisplayPrefab.transform.rotation);
+        ui.GetComponentInChildren<TextMeshProUGUI>().text = amount.ToString("F0");
+        Destroy(ui, 2f);
     }
 
     public void UpdateHealthBar(float currentValue, float maxValue)

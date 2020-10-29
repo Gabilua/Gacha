@@ -55,16 +55,19 @@ public class EnemyCombat : MonoBehaviour
             myMonster.isAggro = true;
         }
 
-        float result = currentHealth - (amount * (100/(100+def)));
+        float result = amount * 10 / def;
 
-        if (result <= 0)
+        UIManager.instance.SpawnDamageDisplay(transform.position, result);
+       
+
+        if (currentHealth - result <= 0)
         {
             currentHealth = 0;
             Death();
         }
         else
         {
-            currentHealth -= amount;
+            currentHealth -= result;
         }
 
         if (healthBar && !healthBar.transform.parent.gameObject.activeInHierarchy)
@@ -72,7 +75,9 @@ public class EnemyCombat : MonoBehaviour
 
         myMonster.anim.SetTrigger("Hurt");
         hitFX.Play();
-    }
+
+        GameManager.instance.StartCoroutine("HitStop", source);
+    }    
 
     public float BaseAtkDamage(string source)
     {
