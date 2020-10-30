@@ -16,13 +16,21 @@ MonoBehaviour:
   level: 0
   currentExperience: 0
   stars: 1
-  maxHP: 5
-  defFlat: 9
-  defPercentage: 10
-  atkFlat: 15
-  atkPercentage: 39
-  skill: 19
-  critRate: 5
-  critDmg: 65
-  recharge: 15
-  _bounds: {x: 0, y: 0}
+  maxHP: 1
+  defFlat: 1
+  defPercentage: 1
+  atkFlat: 1
+  atkPercentage: 1
+  skill: 1
+  critRate: 1
+  critDmg: 1
+  recharge: 1
+  _maxHpBounds: {x: 0, y: 0}
+  _defFlatBounds: {x: 0, y: 0}
+  _defPercentageBounds: {x: 0, y: 0}
+  _atkFlatBounds: {x: 0, y: 0}
+  _atkPercentagepBounds: {x: 0, y: 0}
+  _skillBounds: {x: 0, y: 0}
+  _critRateBounds: {x: 0, y: 0}
+  _critDmgBounds: {x: 0, y: 0}
+  _rechargeBounds: {x: 0, y: 0}

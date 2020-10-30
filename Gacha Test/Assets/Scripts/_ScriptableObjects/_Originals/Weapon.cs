@@ -11,19 +11,12 @@ public class Weapon : Equipament
 
         RandomizeBonusOrder();
 
-        for(int i = 0; i < _attribute.Length; i++)
-        {
-            int j = 0;
-            for(; j < _attributeBonusOrder.Length; j++)
-            {
-                if (i == _attributeBonusOrder[j])
-                {
-                    _attribute[i] = 1;
-                    break;
-                }        
-            }
-        }
+        _attribute[_attributeBonusOrder[0]] = 1;
+        _attribute[_attributeBonusOrder[1]] = 1;
+    }
 
-        SetValues();
+    public override void LevelUp()
+    {
+        throw new NotImplementedException();
     }
 }

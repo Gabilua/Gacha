@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Analytics;
 using Random = UnityEngine.Random;
 
 public enum Attribute { MaxHp, DefFlat, DefPercentage, AtkFlat, AtkPercentage, Skill, CritRate, CritDmg, Recharge }
@@ -11,20 +11,32 @@ public abstract class Equipament : ScriptableObject
     public int currentExperience;
     public int stars = 1;
 
-    public float maxHP = 1;
-    public float defFlat = 1;
-    public float defPercentage = 1;
-    public float atkFlat = 1;
-    public float atkPercentage = 1;
-    public float skill = 1;
-    public float critRate = 1;
-    public float critDmg = 1;
-    public float recharge = 1;
+    [SerializeField] protected float maxHP;
+    [SerializeField] protected float defFlat;
+    [SerializeField] protected float defPercentage;
+    [SerializeField] protected float atkFlat;
+    [SerializeField] protected float atkPercentage;
+    [SerializeField] protected float skill;
+    [SerializeField] protected float critRate;
+    [SerializeField] protected float critDmg;
+    [SerializeField] protected float recharge;
+
+    public float MaxHp => maxHP * _attribute[(int)Attribute.MaxHp];
+    public float DefFlat => defFlat * _attribute[(int)Attribute.DefFlat];
+    public float DefPercentage => defPercentage * _attribute[(int)Attribute.DefPercentage];
+    public float AtkFlat => atkFlat * _attribute[(int)Attribute.AtkFlat];
+    public float AtkPercentage => atkPercentage * _attribute[(int)Attribute.AtkPercentage];
+    public float Skill => skill * _attribute[(int)Attribute.Skill];
+    public float CritRate => critRate * _attribute[(int)Attribute.CritRate];
+    public float CritDmg => critDmg * _attribute[(int)Attribute.CritDmg];
+    public float Recharge => recharge * _attribute[(int)Attribute.Recharge];
 
     protected float[] _attribute;
     protected int[] _attributeBonusOrder;
 
     public abstract void _Init_();
+
+    public abstract void LevelUp();
 
     protected void RandomizeBonusOrder()
     {
@@ -47,18 +59,5 @@ public abstract class Equipament : ScriptableObject
 
         for (int i = 0; i < _attributeBonusOrder.Length; i++)
             _attributeBonusOrder[i] = _attributeOrder[i];
-    }
-
-    protected void SetValues()
-    {
-        maxHP *= _attribute[(int)Attribute.MaxHp];
-        defFlat *= _attribute[(int)Attribute.DefFlat];
-        defPercentage *= _attribute[(int)Attribute.DefPercentage];
-        atkFlat *= _attribute[(int)Attribute.AtkFlat];
-        atkPercentage *= _attribute[(int)Attribute.AtkPercentage];
-        skill *= _attribute[(int)Attribute.Skill];
-        critRate *= _attribute[(int)Attribute.CritRate];
-        critDmg *= _attribute[(int)Attribute.CritDmg];
-        recharge *= _attribute[(int)Attribute.Recharge];
     }
 }
