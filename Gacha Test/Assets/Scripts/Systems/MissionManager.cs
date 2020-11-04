@@ -11,7 +11,7 @@ public class MissionManager : MonoBehaviour
     private void Start()
     {
         DeleteExistingMissions();
-        GenerateMissions(6);
+        GenerateMissions(3);
     }
 
     void DeleteExistingMissions()

@@ -8,7 +8,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] EquipmentManager equipment;
     [SerializeField] Transform avatarHolder;
     [SerializeField] CharacterAvatar[] characterAvatars;
-    [SerializeField] Character[] characterInfo;
+    public Character[] characterInfo;
 
     public Character[] currentParty;
     [SerializeField] CharacterAvatar activeCharacterAvatar;
@@ -90,7 +90,8 @@ public class PlayerCombat : MonoBehaviour
         SetupCharacterAvatar();
         SetupAttributes();
 
-        UIManager.instance.UpdateCurrentCharacterLevelDisplay(level); 
+        UIManager.instance.UpdateCurrentCharacterLevelDisplay(level);
+        UIManager.instance.UpdateCharacterScreenAvatar(i);
     }
 
     void SetupCharacterAvatar()

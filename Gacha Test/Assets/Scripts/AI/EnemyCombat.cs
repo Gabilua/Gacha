@@ -114,7 +114,9 @@ public class EnemyCombat : MonoBehaviour
                 if (other.GetComponentInParent<PlayerCombat>() && other.GetComponentInParent<PlayerCombat>() != this)
                 {
                     if (other.GetComponentInParent<PlayerCombat>())
+                    {
                         ReceiveDamage(other.GetComponentInParent<PlayerCombat>().BaseAtkDamage(other.name), other.GetComponentInParent<PlayerCombat>());
+                    }
                 }
 
                 if (other.GetComponent<Projectile>())

@@ -55,13 +55,13 @@ public class GameManager : MonoBehaviour
                     yield return new WaitForSecondsRealtime(0.15f);
                     break;
                 case 1:
-                    yield return new WaitForSecondsRealtime(0.35f);
-                    break;
-                case 2:
                     yield return new WaitForSecondsRealtime(0.25f);
                     break;
-                case 3:
+                case 2:
                     yield return new WaitForSecondsRealtime(0.2f);
+                    break;
+                case 3:
+                    yield return new WaitForSecondsRealtime(0.175f);
                     break;
                 case 4:
                     yield return new WaitForSecondsRealtime(0.12f);

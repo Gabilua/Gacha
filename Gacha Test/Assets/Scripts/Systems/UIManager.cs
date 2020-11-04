@@ -8,22 +8,36 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    [Header("General")]
-    [SerializeField] GameObject homeButton, innRestButton;
-    [SerializeField] GameObject combatHUD, generalHUD, mainMenu, missionsTab, loadingScreen, homeCheckScreen, progressCheckScreen, innScreen;
-    public RectTransform missionList, partyCharacters;
-    [SerializeField] TextMeshProUGUI missionDescription, missionProgress, innRestCost;
-    [SerializeField] Image missionIcon, staminaBar;
-    [SerializeField] TextMeshProUGUI royalsCounter;
-    [SerializeField] TextMeshProUGUI stardustCounter;
-    [SerializeField] TextMeshProUGUI royalsRewardDisplay;
-    [SerializeField] TextMeshProUGUI stardustRewardDisplay;
-    [SerializeField] TextMeshProUGUI currentCharacterLevelDisplay;
-    [SerializeField] GameObject partyCharacterUIPrefab, damageDisplayPrefab;
-
-    [Header("Combat")]
+    [Header("General HUD")]
+    [SerializeField] GameObject generalHUD;
+    [SerializeField] Image staminaBar;
     [SerializeField] Image healthBar;
     [SerializeField] TextMeshProUGUI healthValue;
+    [SerializeField] TextMeshProUGUI currentCharacterLevelDisplay;
+    [SerializeField] TextMeshProUGUI royalsCounter;
+    [SerializeField] TextMeshProUGUI stardustCounter;
+    [SerializeField] GameObject partyCharacterUIPrefab, characterScreenRosterElementPrefab, damageDisplayPrefab;
+    public RectTransform partyCharacters;
+
+    [Header("Combat HUD")]
+    [SerializeField] GameObject combatHUD;
+    [SerializeField] TextMeshProUGUI missionDescription, missionProgress, innRestCost;
+    [SerializeField] Image missionIcon;
+
+    [Header("Menu Screens")]
+    [SerializeField] GameObject mainMenu;
+    [SerializeField] GameObject missionsTab, loadingScreen, homeCheckScreen, progressCheckScreen, innScreen, characterScreen;
+    [SerializeField] GameObject homeButton, innRestButton;
+    [SerializeField] TextMeshProUGUI royalsRewardDisplay;
+    [SerializeField] TextMeshProUGUI stardustRewardDisplay;
+    public RectTransform missionList, characterScreenRoster;
+    [SerializeField] Animator characterScreenThumbDisplay;
+    [SerializeField] GameObject[] characterScreenAvatars;
+    [SerializeField] GameObject[] characterScreenSessionContent;
+    [SerializeField] TextMeshProUGUI[] characterScreenCharStats;
+    [SerializeField] TextMeshProUGUI[] characterScreenWpnStats;
+    [SerializeField] Image characterScreenStarDisplay;
+    [SerializeField] Image weaponScreenStarDisplay;
 
     [Header("Configurations")]
     [SerializeField] float loadingTime;
@@ -40,6 +54,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         PopulatePartyUI();
+        PopulateCharacterScreenRoster();
     }
 
     void ButtonManagement()
@@ -65,6 +80,7 @@ public class UIManager : MonoBehaviour
     {
         GameObject ui = Instantiate(partyCharacterUIPrefab, partyCharacters);
         ui.GetComponent<PartyCharacterDisplay>().myCharacter = character;
+        ui.GetComponent<PartyCharacterDisplay>().SetupElement();
     }
 
     public void SpawnDamageDisplay(Vector3 where, float amount)
@@ -127,6 +143,14 @@ public class UIManager : MonoBehaviour
         homeCheckScreen.SetActive(state);
     }
 
+    public void ToggleCharacterScreen()
+    {
+        characterScreen.SetActive(!characterScreen.activeInHierarchy);
+
+        UpdateCharacterScreenSection(0);
+        UpdateCharacterScreenAvatar(System.Array.IndexOf(GameManager.instance.player.combat.characterInfo, GameManager.instance.player.combat.activeCharacterInfo));
+    }
+
     public void ToggleProgressCheckScreen(bool state)
     {
         UpdateRewardScreen();
@@ -186,6 +210,13 @@ public class UIManager : MonoBehaviour
         if (!GameManager.instance.isHome)
             combatHUD.SetActive(!state);
 
+        if (characterScreen.activeInHierarchy)
+        {
+            characterScreen.SetActive(false);
+
+            UpdateCharacterScreenSection(0);
+        }
+
         generalHUD.SetActive(!state);
         mainMenu.SetActive(state);
 
@@ -194,4 +225,87 @@ public class UIManager : MonoBehaviour
 
         ButtonManagement();
     } 
+
+    public void UpdateCharacterScreenSection(int i)
+    {
+        characterScreenThumbDisplay.SetInteger("CurrentScreen", i);
+
+        if (i == 0)
+        {
+            foreach (var avatar in characterScreenAvatars)
+            {
+                avatar.GetComponent<EquipmentManager>().Sheath();
+            }
+        }
+        else if (i == 1)
+        {
+            foreach (var avatar in characterScreenAvatars)
+            {
+                avatar.GetComponent<EquipmentManager>().Unsheath();
+            }
+        }
+
+        foreach (var content in characterScreenSessionContent)
+        {
+            content.SetActive(false);
+        }
+
+        characterScreenSessionContent[i].SetActive(true);
+    }
+
+    public void UpdadeCharacterScreenSectionContent(int i)
+    {
+        // update character stats
+        characterScreenCharStats[0].text = GameManager.instance.player.combat.characterInfo[i].name.ToString();
+        characterScreenCharStats[1].text = "Lv."+GameManager.instance.player.combat.characterInfo[i].level.ToString()+"/90";
+        characterScreenStarDisplay.fillAmount = GameManager.instance.player.combat.characterInfo[i].stars/5;
+        characterScreenCharStats[2].text = GameManager.instance.player.combat.characterInfo[i].maxHP.ToString();
+        characterScreenCharStats[3].text = GameManager.instance.player.combat.characterInfo[i].atk.ToString();
+        characterScreenCharStats[4].text = GameManager.instance.player.combat.characterInfo[i].def.ToString();
+        characterScreenCharStats[5].text = GameManager.instance.player.combat.characterInfo[i].skill.ToString();
+        characterScreenCharStats[6].text = GameManager.instance.player.combat.characterInfo[i].critRate.ToString();
+        characterScreenCharStats[7].text = GameManager.instance.player.combat.characterInfo[i].critDmg.ToString();
+        characterScreenCharStats[8].text = GameManager.instance.player.combat.characterInfo[i].recharge.ToString();
+
+
+        // update weapon stats
+        characterScreenWpnStats[0].text = "Weapon Name";
+        characterScreenWpnStats[1].text = "Weapon Level";
+        weaponScreenStarDisplay.fillAmount = 3f / 5f;
+        characterScreenWpnStats[2].text = "MainStat";
+        characterScreenWpnStats[3].text = "SubStat";
+    }
+
+    public void UpdateCharacterScreenAvatar(int i)
+    {
+        characterScreenThumbDisplay.avatar = GameManager.instance.player.combat.characterInfo[i].animatorAvatar;
+        characterScreenThumbDisplay.SetFloat("WeaponType", GameManager.instance.player.combat.characterInfo[i].weaponType);
+
+        foreach (var avatar in characterScreenAvatars)
+        {
+            avatar.gameObject.SetActive(false);
+        }
+
+        characterScreenAvatars[i].SetActive(true);
+
+        UpdadeCharacterScreenSectionContent(i);
+    }
+
+    void PopulateCharacterScreenRoster()
+    {
+        for (int i = 0; i < GameManager.instance.player.GetComponent<PlayerCombat>().characterInfo.Length; i++)
+        {
+            if (GameManager.instance.player.GetComponent<PlayerCombat>().characterInfo[i].level > 0)
+            {
+                NewCharacterScreenRosterElement(GameManager.instance.player.GetComponent<PlayerCombat>().characterInfo[i]);
+            }
+        }
+    }
+
+    public void NewCharacterScreenRosterElement(Character character)
+    {
+        GameObject ui = Instantiate(characterScreenRosterElementPrefab, characterScreenRoster);
+        ui.GetComponent<CharacterScreenRosterElement>().myCharacter = character;
+        ui.GetComponent<CharacterScreenRosterElement>().SetupElement();
+    }
 }

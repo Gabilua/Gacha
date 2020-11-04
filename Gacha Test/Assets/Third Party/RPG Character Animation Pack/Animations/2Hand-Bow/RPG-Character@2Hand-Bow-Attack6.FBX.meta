@@ -755,7 +755,14 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.6011779
+      - time: 0
+        functionName: AttackFX
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 2
+        messageOptions: 0
+      - time: 0.51743406
         functionName: ShootBaseAtkProjectile
         data: 
         objectReferenceParameter: {instanceID: 0}

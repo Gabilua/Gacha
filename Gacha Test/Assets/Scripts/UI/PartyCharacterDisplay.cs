@@ -11,7 +11,7 @@ public class PartyCharacterDisplay : MonoBehaviour
     public Image ultDisplay;
     public Image icon;
 
-    private void Start()
+    public void SetupElement()
     {
         id.text = myCharacter.ID.ToString();
         icon.sprite = myCharacter.icon;

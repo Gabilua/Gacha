@@ -10,13 +10,14 @@ public class Character : ScriptableObject
     public int ID;
     public int element;
     public int weaponType;
+    public float stars;
 
     public int level;
     public int currentExperience;
     public float currenthP;
     public float maxHP;
-    public int def;
     public int atk;
+    public int def;
     public int skill;
     public float critRate;
     public float critDmg;

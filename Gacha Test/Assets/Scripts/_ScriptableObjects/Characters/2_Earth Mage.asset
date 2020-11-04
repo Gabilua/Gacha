@@ -16,12 +16,13 @@ MonoBehaviour:
   ID: 2
   element: 2
   weaponType: 2
+  stars: 4
   level: 1
   currentExperience: 0
   currenthP: 2000
   maxHP: 2000
-  def: 100
   atk: 100
+  def: 100
   skill: 0
   critRate: 5
   critDmg: 50
