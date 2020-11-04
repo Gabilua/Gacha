@@ -147,8 +147,8 @@ public class UIManager : MonoBehaviour
     {
         characterScreen.SetActive(!characterScreen.activeInHierarchy);
 
-        UpdateCharacterScreenSection(0);
         UpdateCharacterScreenAvatar(System.Array.IndexOf(GameManager.instance.player.combat.characterInfo, GameManager.instance.player.combat.activeCharacterInfo));
+        UpdateCharacterScreenSection(0);
     }
 
     public void ToggleProgressCheckScreen(bool state)
@@ -211,11 +211,7 @@ public class UIManager : MonoBehaviour
             combatHUD.SetActive(!state);
 
         if (characterScreen.activeInHierarchy)
-        {
             characterScreen.SetActive(false);
-
-            UpdateCharacterScreenSection(0);
-        }
 
         generalHUD.SetActive(!state);
         mainMenu.SetActive(state);
@@ -234,14 +230,16 @@ public class UIManager : MonoBehaviour
         {
             foreach (var avatar in characterScreenAvatars)
             {
-                avatar.GetComponent<EquipmentManager>().Sheath();
+                if (avatar.activeInHierarchy)
+                    avatar.GetComponent<EquipmentManager>().Sheath();
             }
         }
         else if (i == 1)
         {
             foreach (var avatar in characterScreenAvatars)
             {
-                avatar.GetComponent<EquipmentManager>().Unsheath();
+                if (avatar.activeInHierarchy)
+                    avatar.GetComponent<EquipmentManager>().Unsheath();
             }
         }
 
@@ -269,9 +267,9 @@ public class UIManager : MonoBehaviour
 
 
         // update weapon stats
-        characterScreenWpnStats[0].text = "Weapon Name";
-        characterScreenWpnStats[1].text = "Weapon Level";
-        weaponScreenStarDisplay.fillAmount = 3f / 5f;
+        characterScreenWpnStats[0].text = GameManager.instance.player.combat.characterInfo[i].currentWeapon.name;
+        characterScreenWpnStats[1].text = GameManager.instance.player.combat.characterInfo[i].currentWeapon.level.ToString();
+        weaponScreenStarDisplay.fillAmount = GameManager.instance.player.combat.characterInfo[i].currentWeapon.stars / 5f;
         characterScreenWpnStats[2].text = "MainStat";
         characterScreenWpnStats[3].text = "SubStat";
     }
@@ -280,6 +278,7 @@ public class UIManager : MonoBehaviour
     {
         characterScreenThumbDisplay.avatar = GameManager.instance.player.combat.characterInfo[i].animatorAvatar;
         characterScreenThumbDisplay.SetFloat("WeaponType", GameManager.instance.player.combat.characterInfo[i].weaponType);
+        characterScreenAvatars[i].GetComponent<EquipmentManager>().EquipmentSetup(i);
 
         foreach (var avatar in characterScreenAvatars)
         {

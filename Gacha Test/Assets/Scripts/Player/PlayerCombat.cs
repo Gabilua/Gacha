@@ -87,8 +87,9 @@ public class PlayerCombat : MonoBehaviour
 
         activeCharacterAvatar.gameObject.SetActive(true);
 
-        SetupCharacterAvatar();
         SetupAttributes();
+        SetupCharacterAvatar();
+        equipment.EquipmentSetup(i);
 
         UIManager.instance.UpdateCurrentCharacterLevelDisplay(level);
         UIManager.instance.UpdateCharacterScreenAvatar(i);
@@ -103,7 +104,6 @@ public class PlayerCombat : MonoBehaviour
             equipment.idleEquipment[1] = activeCharacterAvatar.idleEquipment[1];
         }
 
-        equipment.currentWeapon = activeCharacterAvatar.currentWeapon;
         equipment.activeEquipment[0] = activeCharacterAvatar.activeEquipment[0];
         equipment.idleEquipment[0] = activeCharacterAvatar.idleEquipment[0];
 
@@ -121,11 +121,6 @@ public class PlayerCombat : MonoBehaviour
 
         player.anim.avatar = activeCharacterInfo.animatorAvatar;
         player.anim.SetFloat("WeaponType", activeCharacterInfo.weaponType);
-
-        if (player.isIdle)
-            equipment.Sheath();
-        else
-            equipment.Unsheath();
     }
 
     void Death()

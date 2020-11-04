@@ -9,7 +9,7 @@ public abstract class Equipament : ScriptableObject
     public string equipamentName;
     public int level;
     public int currentExperience;
-    public int stars = 1;
+    public float stars = 1;
 
     [SerializeField] protected float maxHP;
     [SerializeField] protected float defFlat;

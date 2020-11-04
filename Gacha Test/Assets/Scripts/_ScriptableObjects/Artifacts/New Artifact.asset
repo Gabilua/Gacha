@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70805c7386b6fe843a4c165a8b924871, type: 3}
+  m_Name: New Artifact
+  m_EditorClassIdentifier: 
+  equipamentName: 
+  level: 0
+  currentExperience: 0
+  stars: 1
+  maxHP: 1
+  defFlat: 1
+  defPercentage: 1
+  atkFlat: 1
+  atkPercentage: 1
+  skill: 1
+  critRate: 1
+  critDmg: 1
+  recharge: 1
+  _maxHpBounds: {x: 0, y: 0}
+  _defFlatBounds: {x: 0, y: 0}
+  _defPercentageBounds: {x: 0, y: 0}
+  _atkFlatBounds: {x: 0, y: 0}
+  _atkPercentagepBounds: {x: 0, y: 0}
+  _skillBounds: {x: 0, y: 0}
+  _critRateBounds: {x: 0, y: 0}
+  _critDmgBounds: {x: 0, y: 0}
+  _rechargeBounds: {x: 0, y: 0}

@@ -17,6 +17,12 @@ MonoBehaviour:
   element: 3
   weaponType: 1
   stars: 5
+  currentWeapon: {fileID: 11400000, guid: ea74630a53a5fac4dbe458ce38fa14e7, type: 2}
+  currentType1Artifact: {fileID: 0}
+  currentType2Artifact: {fileID: 0}
+  currentType3Artifact: {fileID: 0}
+  currentType4Artifact: {fileID: 0}
+  currentType5Artifact: {fileID: 0}
   level: 1
   currentExperience: 0
   currenthP: 2850
@@ -31,6 +37,7 @@ MonoBehaviour:
   - 1
   - 1.5
   - 2
+  startWeapon: {fileID: 11400000, guid: ea74630a53a5fac4dbe458ce38fa14e7, type: 2}
   baseAtkProjectile: {fileID: 0}
   animatorAvatar: {fileID: 9000000, guid: 997a9c545ec5b8842ae7082e75be2b4e, type: 3}
   baseAtkCD: 2

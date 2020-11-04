@@ -7,6 +7,22 @@ public class EquipmentManager : MonoBehaviour
     public GameObject currentWeapon, currentShield;
     public Transform[] activeEquipment, idleEquipment;
 
+    public void EquipmentSetup(int i)
+    {
+        Destroy(currentWeapon);
+
+        if (GameManager.instance.player.isIdle)
+        {
+            currentWeapon = Instantiate(GameManager.instance.player.combat.characterInfo[i].currentWeapon.inGameGFX, idleEquipment[0]);
+            Sheath();
+        }
+        else
+        {
+            currentWeapon = Instantiate(GameManager.instance.player.combat.characterInfo[i].currentWeapon.inGameGFX, activeEquipment[0]);
+            Unsheath();
+        }
+    }
+
     public void Sheath()
     {
         currentWeapon.transform.position = idleEquipment[0].position;

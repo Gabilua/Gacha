@@ -12,6 +12,13 @@ public class Character : ScriptableObject
     public int weaponType;
     public float stars;
 
+    public Weapon currentWeapon;
+    public Artifact currentType1Artifact;
+    public Artifact currentType2Artifact;
+    public Artifact currentType3Artifact;
+    public Artifact currentType4Artifact;
+    public Artifact currentType5Artifact;
+
     public int level;
     public int currentExperience;
     public float currenthP;
@@ -24,6 +31,7 @@ public class Character : ScriptableObject
     public float recharge;
     public float[] baseAtkMultipliers;
 
+    public Weapon startWeapon;
     public GameObject baseAtkProjectile;
     public Avatar animatorAvatar;
     public float baseAtkCD;
