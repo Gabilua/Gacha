@@ -157,7 +157,7 @@ public class PlayerCombat : MonoBehaviour
         player.anim.SetTrigger("Hurt");
         hitFX.Play();
 
-        GameManager.instance.StartCoroutine("HitStop", null);
+        GameManager.instance.StartCoroutine("HitStop", -1);
     }
 
     public float BaseAtkDamage(string source)

@@ -43,13 +43,13 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region General
-    public IEnumerator HitStop(PlayerCombat source)
+    public IEnumerator HitStop(int i)
     {
-        Time.timeScale = 0;
-
-        if(source != null)
+        if(i >= 0)
         {
-            switch (source.activeCharacterInfo.weaponType)
+            Time.timeScale = 0;
+
+            switch (i)
             {
                 case 0:
                     yield return new WaitForSecondsRealtime(0.15f);
@@ -67,11 +67,11 @@ public class GameManager : MonoBehaviour
                     yield return new WaitForSecondsRealtime(0.12f);
                     break;
             }
+
+            Time.timeScale = 1;
         }
         else
             yield return new WaitForSecondsRealtime(0.15f);
-
-        Time.timeScale = 1;
     }
     public void DeployParty(int[] partyCharacterIDs)
     {
