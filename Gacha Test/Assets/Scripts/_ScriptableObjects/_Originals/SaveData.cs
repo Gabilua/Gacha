@@ -9,5 +9,6 @@ public class SaveData : ScriptableObject
     public int royals;
 
     public Character[] allCharacters;
-    public Character[] allWeapons;
+    public Weapon[] allWeapons;
+    public Character[] currentParty;
 }

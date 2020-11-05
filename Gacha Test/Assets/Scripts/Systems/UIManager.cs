@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentCharacterLevelDisplay;
     [SerializeField] TextMeshProUGUI royalsCounter;
     [SerializeField] TextMeshProUGUI stardustCounter;
-    [SerializeField] GameObject partyCharacterUIPrefab, characterScreenRosterElementPrefab, damageDisplayPrefab;
+    [SerializeField] GameObject partyCharacterUIPrefab, characterScreenRosterElementPrefab, partyScreenRosterElementPrefab, damageDisplayPrefab;
     public RectTransform partyCharacters;
 
     [Header("Combat HUD")]
@@ -26,11 +26,11 @@ public class UIManager : MonoBehaviour
 
     [Header("Menu Screens")]
     [SerializeField] GameObject mainMenu;
-    [SerializeField] GameObject missionsTab, loadingScreen, homeCheckScreen, progressCheckScreen, innScreen, characterScreen;
+    [SerializeField] GameObject missionsTab, loadingScreen, homeCheckScreen, progressCheckScreen, innScreen, characterScreen, partyScreen;
     [SerializeField] GameObject homeButton, innRestButton;
     [SerializeField] TextMeshProUGUI royalsRewardDisplay;
     [SerializeField] TextMeshProUGUI stardustRewardDisplay;
-    public RectTransform missionList, characterScreenRoster;
+    public RectTransform missionList, characterScreenRoster, partyScreenRoster;
     [SerializeField] Animator characterScreenThumbDisplay;
     [SerializeField] GameObject[] characterScreenAvatars;
     [SerializeField] GameObject[] characterScreenSessionContent;
@@ -38,12 +38,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI[] characterScreenWpnStats;
     [SerializeField] Image characterScreenStarDisplay;
     [SerializeField] Image weaponScreenStarDisplay;
+    [SerializeField] GameObject[] partyScreenAvatars;
+    [SerializeField] TextMeshProUGUI[] partyScreenAvatarNames;
+    [SerializeField] GameObject[] partyScreenAvatarSlotCam;
+    [SerializeField] RectTransform[] partyScreenDisplaySlots;
+    [SerializeField] int[] temporaryPartyComposition;
 
     [Header("Configurations")]
     [SerializeField] float loadingTime;
     public Color[] elementColors;
 
     float staminaBarFadeTimer;
+    RectTransform currentDraggingElement;
 
     private void Awake()
     {
@@ -55,6 +61,13 @@ public class UIManager : MonoBehaviour
     {
         PopulatePartyUI();
         PopulateCharacterScreenRoster();
+        PopulatePartyScreenRoster();
+    }
+
+    private void Update()
+    {
+        if (currentDraggingElement != null)
+            currentDraggingElement.position = Input.mousePosition;
     }
 
     void ButtonManagement()
@@ -65,8 +78,13 @@ public class UIManager : MonoBehaviour
             homeButton.SetActive(true);
     }
 
-    void PopulatePartyUI()
+    public void PopulatePartyUI()
     {
+        foreach (Transform child in partyCharacters)
+        {
+            Destroy(child.gameObject);
+        }
+
         for (int i = 0; i < GameManager.instance.player.GetComponent<PlayerCombat>().currentParty.Length; i++)
         {
             if(GameManager.instance.player.GetComponent<PlayerCombat>().currentParty[i] != null && GameManager.instance.player.GetComponent<PlayerCombat>().currentParty[i] != GameManager.instance.player.GetComponent<PlayerCombat>().activeCharacterInfo)
@@ -151,6 +169,21 @@ public class UIManager : MonoBehaviour
         UpdateCharacterScreenSection(0);
     }
 
+    public void TogglePartyScreen(bool state)
+    {
+        for (int i = 0; i < temporaryPartyComposition.Length; i++)
+        {
+            if (GameManager.instance.player.combat.currentParty[i] == null)
+                temporaryPartyComposition[i] = -1;
+            else
+                temporaryPartyComposition[i] = GameManager.instance.player.combat.currentParty[i].ID;
+        }
+
+        UpdatePartyScreenAvatarDisplay();
+        partyScreen.SetActive(state);
+        ToggleMainMenu(false);
+    }
+
     public void ToggleProgressCheckScreen(bool state)
     {
         UpdateRewardScreen();
@@ -207,10 +240,10 @@ public class UIManager : MonoBehaviour
 
     public void ToggleMainMenu(bool state)
     {
-        if (!GameManager.instance.isHome)
-            combatHUD.SetActive(!state);
+        if (!GameManager.instance.isHome && !combatHUD.activeInHierarchy)
+            combatHUD.SetActive(true);
 
-        if (characterScreen.activeInHierarchy)
+        if (!state && characterScreen.activeInHierarchy)
             characterScreen.SetActive(false);
 
         generalHUD.SetActive(!state);
@@ -254,7 +287,7 @@ public class UIManager : MonoBehaviour
     public void UpdadeCharacterScreenSectionContent(int i)
     {
         // update character stats
-        characterScreenCharStats[0].text = GameManager.instance.player.combat.characterInfo[i].name.ToString();
+        characterScreenCharStats[0].text = GameManager.instance.player.combat.characterInfo[i].characterName.ToString();
         characterScreenCharStats[1].text = "Lv."+GameManager.instance.player.combat.characterInfo[i].level.ToString()+"/90";
         characterScreenStarDisplay.fillAmount = GameManager.instance.player.combat.characterInfo[i].stars/5;
         characterScreenCharStats[2].text = GameManager.instance.player.combat.characterInfo[i].maxHP.ToString();
@@ -267,7 +300,7 @@ public class UIManager : MonoBehaviour
 
 
         // update weapon stats
-        characterScreenWpnStats[0].text = GameManager.instance.player.combat.characterInfo[i].currentWeapon.name;
+        characterScreenWpnStats[0].text = GameManager.instance.player.combat.characterInfo[i].currentWeapon.equipamentName;
         characterScreenWpnStats[1].text = GameManager.instance.player.combat.characterInfo[i].currentWeapon.level.ToString();
         weaponScreenStarDisplay.fillAmount = GameManager.instance.player.combat.characterInfo[i].currentWeapon.stars / 5f;
         characterScreenWpnStats[2].text = "MainStat";
@@ -292,6 +325,11 @@ public class UIManager : MonoBehaviour
 
     void PopulateCharacterScreenRoster()
     {
+        foreach (Transform child in characterScreenRoster)
+        {
+            Destroy(child.gameObject);
+        }
+
         for (int i = 0; i < GameManager.instance.player.GetComponent<PlayerCombat>().characterInfo.Length; i++)
         {
             if (GameManager.instance.player.GetComponent<PlayerCombat>().characterInfo[i].level > 0)
@@ -306,5 +344,107 @@ public class UIManager : MonoBehaviour
         GameObject ui = Instantiate(characterScreenRosterElementPrefab, characterScreenRoster);
         ui.GetComponent<CharacterScreenRosterElement>().myCharacter = character;
         ui.GetComponent<CharacterScreenRosterElement>().SetupElement();
+    }
+
+    void PopulatePartyScreenRoster()
+    {
+        foreach (Transform child in partyScreenRoster)
+        {
+            Destroy(child.gameObject);
+        }
+
+        for (int i = 0; i < GameManager.instance.player.GetComponent<PlayerCombat>().characterInfo.Length; i++)
+        {
+            if (GameManager.instance.player.GetComponent<PlayerCombat>().characterInfo[i].level > 0)
+            {
+                NewPartyScreenRosterElement(GameManager.instance.player.GetComponent<PlayerCombat>().characterInfo[i]);
+            }
+        }
+    }
+
+    public void NewPartyScreenRosterElement(Character character)
+    {
+        GameObject ui = Instantiate(partyScreenRosterElementPrefab, partyScreenRoster);
+        ui.GetComponent<PartyScreenRosterElement>().myCharacter = character;
+        ui.GetComponent<PartyScreenRosterElement>().SetupElement();
+    }
+
+    public void AttachElementToCursor(GameObject element)
+    {
+        DettachElementFromCursor();
+
+        currentDraggingElement = element.GetComponent<RectTransform>();
+    }
+
+    public void DettachElementFromCursor()
+    {
+        if (currentDraggingElement != null)
+            Destroy(currentDraggingElement.gameObject);
+    }
+
+    public void DropRosterElementOnDisplaySlot(int id)
+    {
+        //Runs through all UI character slots
+        for (int i = 0; i < partyScreenDisplaySlots.Length; i++)
+        {
+            //Checks if the dragged icon is being dropped on top of any UI slot
+            if (GetWorldSapceRect(partyScreenDisplaySlots[i]).Contains(GetWorldSapceRect(currentDraggingElement).position))
+            {
+                //Runs through the temporaryParty array of character IDs
+                for (int j = 0; j < temporaryPartyComposition.Length; j++)
+                {
+                    //Checks if the dropped character ID is already present on any temporaryParty slots
+                    if (temporaryPartyComposition[j] == id)
+                    {
+                        //Clears up the previous slot containing the character
+                        temporaryPartyComposition[j] = -1;
+
+                        //Checks if the repeated character is being dropped on top of an occupied slot
+                        if (temporaryPartyComposition[i] != -1)
+                        {
+                            //Places character present on picked slot to the slot previously occupied by the repeated character
+                            temporaryPartyComposition[j] = temporaryPartyComposition[i];
+                        }
+                    }                    
+                }
+
+                //Places picked character on chosen slot and updates the temporaryParty array's position with its ID
+                temporaryPartyComposition[i] = id;
+
+                UpdatePartyScreenAvatarDisplay();
+            }
+        }
+    }
+
+    Rect GetWorldSapceRect(RectTransform rt)
+    {
+        var r = rt.rect;
+        r.center = rt.TransformPoint(r.center);
+        r.size = rt.TransformVector(r.size);
+        return r;
+    }
+
+    void UpdatePartyScreenAvatarDisplay()
+    {
+        for (int i = 0; i < temporaryPartyComposition.Length; i++)
+        {
+            PlaceCameraOnSpecifiedCharacter(temporaryPartyComposition[i], i);
+        }
+    }
+
+    public void PlaceCameraOnSpecifiedCharacter(int avatarIndex, int slotIndex)
+    {      
+        partyScreenAvatarSlotCam[slotIndex].transform.position = partyScreenAvatars[avatarIndex+1].transform.position;
+
+        if (avatarIndex < 0)
+            partyScreenAvatarNames[slotIndex].text = " ";
+        else
+            partyScreenAvatarNames[slotIndex].text = GameManager.instance.player.combat.characterInfo[avatarIndex].characterName;
+    }
+
+    public void Deploy()
+    {
+        GameManager.instance.DeployParty(temporaryPartyComposition);
+        TogglePartyScreen(false);
     }
 }

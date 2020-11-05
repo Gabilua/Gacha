@@ -73,6 +73,22 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 1;
     }
+    public void DeployParty(int[] partyCharacterIDs)
+    {
+        for (int i = 0; i < player.combat.currentParty.Length; i++)
+        {
+            if (partyCharacterIDs[i] == -1)
+                player.combat.currentParty[i] = null;
+            else
+                player.combat.currentParty[i] = player.combat.characterInfo[partyCharacterIDs[i]];
+        }
+
+        player.combat.ChangeActiveCharacter(player.combat.currentParty[0].ID);
+
+        UIManager.instance.PopulatePartyUI();
+        SaveCurrentParty();
+    }
+
     #endregion
 
     #region TownManagement
@@ -272,6 +288,11 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region WritingToSave
+    void SaveCurrentParty()
+    {
+        save.currentParty = player.combat.currentParty;
+    }
+
     void EarnStardust(int amount)
     {
         save.stardust += amount;

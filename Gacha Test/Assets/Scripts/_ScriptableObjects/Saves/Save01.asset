@@ -16,4 +16,18 @@ MonoBehaviour:
   royals: 25000
   allCharacters:
   - {fileID: 11400000, guid: 99b84171eaa57ed4ca4a9c4780b11af5, type: 2}
-  allWeapons: []
+  - {fileID: 11400000, guid: c89b2269422240d4c8da66e5f9b15913, type: 2}
+  - {fileID: 11400000, guid: 1aefc269363c34c4993e5363e4347e6b, type: 2}
+  - {fileID: 11400000, guid: a9c6a6e3f9d3c4141ad8c6fe1642f6a0, type: 2}
+  - {fileID: 11400000, guid: 7d0b10ddf41e22c4fbd11027505df98a, type: 2}
+  allWeapons:
+  - {fileID: 11400000, guid: b313f93c8dbace74ca6e42ce6480b5b6, type: 2}
+  - {fileID: 11400000, guid: ea74630a53a5fac4dbe458ce38fa14e7, type: 2}
+  - {fileID: 11400000, guid: 6b29cbbc47e85f840bb557c383bf6d4d, type: 2}
+  - {fileID: 11400000, guid: 20c7629f0a4d0a54daed225a4d638a77, type: 2}
+  - {fileID: 11400000, guid: bc0414388558a2c4c9f9badbf3674ee7, type: 2}
+  currentParty:
+  - {fileID: 11400000, guid: 99b84171eaa57ed4ca4a9c4780b11af5, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

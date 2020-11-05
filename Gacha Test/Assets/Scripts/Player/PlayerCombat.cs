@@ -44,6 +44,12 @@ public class PlayerCombat : MonoBehaviour
         recharge = activeCharacterInfo.recharge;
     }
 
+    void SetupParty()
+    {
+        currentParty = GameManager.instance.save.currentParty;
+        ChangeActiveCharacter(player.combat.currentParty[0].ID);
+    }
+
     void WriteBackToCharacters()
     {
         activeCharacterInfo.level = Mathf.FloorToInt(level);
@@ -63,8 +69,7 @@ public class PlayerCombat : MonoBehaviour
     private void Start()
     {
         characterAvatars = avatarHolder.GetComponentsInChildren<CharacterAvatar>();
-
-        ChangeActiveCharacter(0);
+        SetupParty();
     }
 
     void Update()
