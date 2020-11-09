@@ -27,7 +27,7 @@ public class MissionManager : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             GameObject element = Instantiate(missionListElement, UIManager.instance.missionList);
-            element.GetComponent<MissionListElement>().SetupMissionUI(currentTown.townAreas[0]);
+            element.GetComponent<MissionListElement>().SetupMissionUI();
         }
     }
 }

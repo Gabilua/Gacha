@@ -8,15 +8,17 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [Header("References")]
+    public MissionManager missions;
     public PlayerController player;
     public SaveData save;
-    [SerializeField] Transform generatedLevel, spawnedMobGroups, playerSpawn;
-    [SerializeField] GameObject townLevel;
+    [SerializeField] Transform generatedLevel, townLevel, spawnedMobGroups, playerSpawn;
+    [SerializeField] GameObject currentTownLevel;
     public Camera cam;
 
     [Header("Mission Generation")]
     [SerializeField] Mission[] availableMissions;
     public Mission currentMission;
+    public Area currentMissionArea;
     public GameObject currentMissionUiElement;
     public float missionTileAmount;
     public int missionEnemyAmount;
@@ -130,7 +132,9 @@ public class GameManager : MonoBehaviour
         UIManager.instance.StartMission();
         UIManager.instance.ToggleCombatHUD(true);
         UIManager.instance.UpdateHealthBar(player.combat.currentHealth, player.combat.maxHealth);
-        townLevel.SetActive(false);
+
+        if (currentTownLevel != null)
+            Destroy(currentTownLevel);    
 
         isHome = false;
         player.isIdle = false;
@@ -138,11 +142,15 @@ public class GameManager : MonoBehaviour
     }
     public int CalculateRoyalRewards(Mission mission)
     {
-        return currentMissionRoyalsReward = Random.Range(Mathf.FloorToInt(mission.royalsAmountInterval.x), Mathf.FloorToInt(mission.royalsAmountInterval.y));
+        return currentMissionRoyalsReward = Mathf.FloorToInt((Random.Range(Mathf.FloorToInt(mission.royalsAmountInterval.x), Mathf.FloorToInt(mission.royalsAmountInterval.y))) * missions.currentTown.difficultyLevel);
     }
     public int CalculateStardustRewards(Mission mission)
     {
-       return currentMissionStardustReward = Random.Range(Mathf.FloorToInt(mission.stardustAmountInterval.x), Mathf.FloorToInt(mission.stardustAmountInterval.y));
+       return currentMissionStardustReward = Mathf.FloorToInt(Random.Range(Mathf.FloorToInt(mission.stardustAmountInterval.x), Mathf.FloorToInt(mission.stardustAmountInterval.y))*missions.currentTown.difficultyLevel);
+    }
+    public Area ChooseAreaForMissionBasedOnCurrentTown()
+    {
+        return missions.currentTown.townAreas[Random.Range(0, missions.currentTown.townAreas.Length)];
     }
     public void EndMission()
     {
@@ -160,7 +168,9 @@ public class GameManager : MonoBehaviour
 
         UIManager.instance.ToggleMainMenu(false);
         UIManager.instance.ToggleCombatHUD(false);
-        townLevel.SetActive(true);
+
+        if (currentTownLevel == null)
+            currentTownLevel = Instantiate(missions.currentTown.townLevel, townLevel.position, townLevel.rotation);
 
         isHome = true;
         player.isIdle = true;
@@ -173,20 +183,20 @@ public class GameManager : MonoBehaviour
     }
     void GenerateLevel()
     {
-        missionTileAmount = Random.Range(Mathf.FloorToInt(currentMission.tileAmountInterval.x), Mathf.FloorToInt(currentMission.tileAmountInterval.y));
+        missionTileAmount = Random.Range(Mathf.FloorToInt(currentMission.tileAmountInterval.x), Mathf.FloorToInt(currentMission.tileAmountInterval.y + Mathf.CeilToInt(missions.currentTown.difficultyLevel)));
 
         for (int i = 0; i < missionTileAmount; i++)
         {
-            Vector3 tilePos = new Vector3((i * currentMission.tileLenght) + transform.position.x, transform.position.y, transform.position.z);
+            Vector3 tilePos = new Vector3((i * currentMissionArea.tileLenght) + transform.position.x, transform.position.y, transform.position.z);
 
             if (i == 0)
             {
-                GameObject tile = Instantiate(currentMission.startTile, tilePos, transform.rotation);
+                GameObject tile = Instantiate(currentMissionArea.startTile, tilePos, transform.rotation);
                 tile.transform.SetParent(generatedLevel);
             }
             else if(i == (missionTileAmount - 1))
             {
-                GameObject tile = Instantiate(currentMission.endTile, tilePos, transform.rotation);
+                GameObject tile = Instantiate(currentMissionArea.endTile, tilePos, transform.rotation);
                 tile.transform.SetParent(generatedLevel);
 
                 generatedLevel.GetComponent<NavMeshSurface>().BuildNavMesh();
@@ -194,8 +204,8 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                int r = Random.Range(0, currentMission.tilePool.Length); 
-                GameObject tile = Instantiate(currentMission.tilePool[r], tilePos, transform.rotation);
+                int r = Random.Range(0, currentMissionArea.tilePool.Length); 
+                GameObject tile = Instantiate(currentMissionArea.tilePool[r], tilePos, transform.rotation);
                 tile.transform.SetParent(generatedLevel);
             }
         }
@@ -207,11 +217,12 @@ public class GameManager : MonoBehaviour
     {
         if(currentMission.missionType == 0)
         {
-            float currentLevelLenght = (missionTileAmount * currentMission.tileLenght)-20;
+            float currentLevelLenght = (missionTileAmount * currentMissionArea.tileLenght)-20;
+            int missionMobAmount = Random.Range(currentMission.mobAmount + Mathf.FloorToInt(missions.currentTown.difficultyLevel), currentMission.mobAmount + Mathf.CeilToInt(missions.currentTown.difficultyLevel));
 
-            for (int i = 0; i < currentMission.mobAmount; i++)
+            for (int i = 0; i < missionMobAmount; i++)
             {
-                Vector3 mobPos = new Vector3((i*(currentLevelLenght/currentMission.mobAmount)) +transform.position.x, transform.position.y, transform.position.z);
+                Vector3 mobPos = new Vector3((i*(currentLevelLenght/ missionMobAmount)) +transform.position.x, transform.position.y, transform.position.z);
 
                 int r = Random.Range(0, currentMission.mobGroups.Length);
                 GameObject mob = Instantiate(currentMission.mobGroups[r], mobPos, transform.rotation);

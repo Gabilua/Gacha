@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject missionsTab, loadingScreen, homeCheckScreen, progressCheckScreen, innScreen, characterScreen, partyScreen;
     [SerializeField] GameObject homeButton, innRestButton;
+    [SerializeField] TextMeshProUGUI missionTabTownName;
     [SerializeField] TextMeshProUGUI royalsRewardDisplay;
     [SerializeField] TextMeshProUGUI stardustRewardDisplay;
     public RectTransform missionList, characterScreenRoster, partyScreenRoster;
@@ -193,6 +194,7 @@ public class UIManager : MonoBehaviour
 
     public void ToggleMissionsTab(bool state)
     {
+        missionTabTownName.text = GameManager.instance.missions.currentTown.townName;
         missionsTab.SetActive(state);
     }
 

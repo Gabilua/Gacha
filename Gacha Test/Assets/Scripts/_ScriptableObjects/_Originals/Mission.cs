@@ -13,9 +13,6 @@ public class Mission : ScriptableObject
 
     [Header("Level Configuration")]
     public Vector2 tileAmountInterval;
-    public GameObject[] tilePool;
-    public GameObject startTile, endTile;
-    public float tileLenght;
 
     [Header("Enemy Configuration")]
     public GameObject[] mobGroups;

@@ -18,8 +18,11 @@ public class MissionListElement : MonoBehaviour
     public int calculatedRoyalsReward;
     public int calculatedStardustReward;
 
+    public Area missionArea;
+
     public void ClickElement()
     {
+        GameManager.instance.currentMissionArea = missionArea;
         GameManager.instance.StartCoroutine("StartMission", myMission.missionType);
 
         GameManager.instance.currentMissionRoyalsReward = calculatedRoyalsReward;
@@ -28,10 +31,11 @@ public class MissionListElement : MonoBehaviour
         GameManager.instance.currentMissionUiElement = gameObject;
     }
 
-    public void SetupMissionUI(string area)
+    public void SetupMissionUI()
     {
+        missionArea = GameManager.instance.ChooseAreaForMissionBasedOnCurrentTown();
         icon.sprite = myMission.icon;
-        title.text = area + " - "+ myMission.missionTitle;
+        title.text = missionArea.areaName + " - "+ myMission.missionTitle;
         description.text = myMission.missionDescription;
 
         calculatedRoyalsReward = GameManager.instance.CalculateRoyalRewards(myMission);
