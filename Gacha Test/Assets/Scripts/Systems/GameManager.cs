@@ -90,7 +90,24 @@ public class GameManager : MonoBehaviour
         UIManager.instance.PopulatePartyUI();
         SaveCurrentParty();
     }
-
+    public void TownChange(Town town)
+    {
+        DestroyTownLevel();
+        UIManager.instance.StartCoroutine("LoadingScreen", 3f);
+        missions.currentTown = town;
+        CreateTownLevel();
+        player.Spawn(playerSpawn);
+    }
+    void CreateTownLevel()
+    {
+        currentTownLevel = Instantiate(missions.currentTown.townLevel, townLevel.position, townLevel.rotation);
+        currentTownLevel.transform.SetParent(townLevel);
+    }
+    void DestroyTownLevel()
+    {
+        if (currentTownLevel != null)
+            Destroy(currentTownLevel);
+    }
     #endregion
 
     #region TownManagement
@@ -100,7 +117,8 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < player.combat.currentParty.Length; i++)
         {
-            restCost += Mathf.FloorToInt(player.combat.currentParty[i].maxHP - player.combat.currentParty[i].currenthP);
+            if (player.combat.currentParty[i] != null)
+                restCost += Mathf.FloorToInt(player.combat.currentParty[i].maxHP - player.combat.currentParty[i].currenthP);
         }
 
         restCost /= 2;
@@ -126,15 +144,13 @@ public class GameManager : MonoBehaviour
     void SetupMission(int i)
     {
         currentMission = availableMissions[i];
+        DestroyTownLevel();
         GenerateLevel();
         SetupMissionParameters();       
 
         UIManager.instance.StartMission();
         UIManager.instance.ToggleCombatHUD(true);
         UIManager.instance.UpdateHealthBar(player.combat.currentHealth, player.combat.maxHealth);
-
-        if (currentTownLevel != null)
-            Destroy(currentTownLevel);    
 
         isHome = false;
         player.isIdle = false;
@@ -154,7 +170,7 @@ public class GameManager : MonoBehaviour
     }
     public void EndMission()
     {
-        UIManager.instance.StartCoroutine("LoadingScreen");
+        UIManager.instance.StartCoroutine("LoadingScreen", 2f);
         UIManager.instance.ToggleHomeCheckScreen(false);
         UIManager.instance.ToggleProgressCheckScreen(false);
 
@@ -165,13 +181,11 @@ public class GameManager : MonoBehaviour
         }
 
         DestroyLevel();
+        CreateTownLevel();
 
         UIManager.instance.ToggleMainMenu(false);
         UIManager.instance.ToggleCombatHUD(false);
-
-        if (currentTownLevel == null)
-            currentTownLevel = Instantiate(missions.currentTown.townLevel, townLevel.position, townLevel.rotation);
-
+       
         isHome = true;
         player.isIdle = true;
         player.Spawn(playerSpawn);

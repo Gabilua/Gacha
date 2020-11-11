@@ -26,9 +26,9 @@ public class UIManager : MonoBehaviour
 
     [Header("Menu Screens")]
     [SerializeField] GameObject mainMenu;
-    [SerializeField] GameObject missionsTab, loadingScreen, homeCheckScreen, progressCheckScreen, innScreen, characterScreen, partyScreen;
-    [SerializeField] GameObject homeButton, innRestButton;
-    [SerializeField] TextMeshProUGUI missionTabTownName;
+    [SerializeField] GameObject missionsTab, loadingScreen, homeCheckScreen, progressCheckScreen, innScreen, characterScreen, partyScreen, mapScreen;
+    [SerializeField] GameObject homeButton, innRestButton, mapTravelButton;
+    [SerializeField] TextMeshProUGUI missionTabTownName, innScreenTownName;
     [SerializeField] TextMeshProUGUI royalsRewardDisplay;
     [SerializeField] TextMeshProUGUI stardustRewardDisplay;
     public RectTransform missionList, characterScreenRoster, partyScreenRoster;
@@ -44,13 +44,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject[] partyScreenAvatarSlotCam;
     [SerializeField] RectTransform[] partyScreenDisplaySlots;
     [SerializeField] int[] temporaryPartyComposition;
+    [SerializeField] MapIcon[] mapIcons;
+    [SerializeField] TextMeshProUGUI mapTownName, mapTownDescription;
 
     [Header("Configurations")]
-    [SerializeField] float loadingTime;
     public Color[] elementColors;
 
     float staminaBarFadeTimer;
     RectTransform currentDraggingElement;
+    Town currentMapIconTownSelected;
 
     private void Awake()
     {
@@ -143,6 +145,7 @@ public class UIManager : MonoBehaviour
     public void ToggleInnScreen(bool state)
     {
         innRestCost.text = GameManager.instance.InnRestCost().ToString();
+        innScreenTownName.text = GameManager.instance.missions.currentTown.townName+" Inn";
 
         if (GameManager.instance.InnRestCost() > 0)
         {
@@ -168,6 +171,41 @@ public class UIManager : MonoBehaviour
 
         UpdateCharacterScreenAvatar(System.Array.IndexOf(GameManager.instance.player.combat.characterInfo, GameManager.instance.player.combat.activeCharacterInfo));
         UpdateCharacterScreenSection(0);
+    }
+
+    public void ToggleMapScreen(bool state)
+    {
+        foreach (var icon in mapIcons)
+        {
+            if (icon.myTown.unlocked)
+                icon.gameObject.SetActive(true);
+            else
+                icon.gameObject.SetActive(false);
+        }
+
+        currentMapIconTownSelected = null;
+        UpdateMapScreenInfo(GameManager.instance.missions.currentTown);
+
+        mapScreen.SetActive(state);
+    }
+
+    public void UpdateMapScreenInfo(Town town)
+    {
+        currentMapIconTownSelected = town;
+
+        if (town == GameManager.instance.missions.currentTown)
+            mapTravelButton.SetActive(false);
+        else
+            mapTravelButton.SetActive(true);
+
+        mapTownName.text = town.townName;
+        mapTownDescription.text = town.townDescription;
+    }
+
+    public void ChooseMapIcon()
+    {
+        GameManager.instance.TownChange(currentMapIconTownSelected);
+        ToggleMapScreen(false);
     }
 
     public void TogglePartyScreen(bool state)
@@ -200,7 +238,7 @@ public class UIManager : MonoBehaviour
 
     public void StartMission()
     {
-        StartCoroutine("LoadingScreen");
+        StartCoroutine("LoadingScreen", 2f);
         ToggleMissionsTab(false);
 
         UpdateMissionParameters();
@@ -222,7 +260,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public IEnumerator LoadingScreen()
+    public IEnumerator LoadingScreen(float loadingTime)
     {
         loadingScreen.SetActive(true);
         yield return new WaitForSeconds(loadingTime);

@@ -326,6 +326,8 @@ public class PlayerController : MonoBehaviour
                 UIManager.instance.ToggleProgressCheckScreen(true);
             else if (other.name == "Inn")
                 UIManager.instance.ToggleInnScreen(true);
+            else if (other.name == "Map")
+                UIManager.instance.ToggleMapScreen(true);
 
         }
     }
@@ -338,6 +340,8 @@ public class PlayerController : MonoBehaviour
                 UIManager.instance.ToggleMissionsTab(false);
             else if (other.name == "Inn")
                 UIManager.instance.ToggleInnScreen(false);
+            else if (other.name == "Map")
+                UIManager.instance.ToggleMapScreen(false);
         }
     }
 }

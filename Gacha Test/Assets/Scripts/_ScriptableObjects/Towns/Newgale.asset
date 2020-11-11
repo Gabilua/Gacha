@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   townID: 0
   townName: Newgale
+  townDescription: '"...home of the east winds and hostess of all travelers"'
   difficultyLevel: 1
   townAreas:
   - {fileID: 11400000, guid: 1196904603029aa4bb12655ed7dcd19c, type: 2}
@@ -22,3 +23,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 155bb2be358d5ea41abdfd1c9e836c3f, type: 2}
   townLevel: {fileID: 608006319382010309, guid: 420d31fa842092046a8fa6b8d0338989,
     type: 3}
+  unlocked: 1

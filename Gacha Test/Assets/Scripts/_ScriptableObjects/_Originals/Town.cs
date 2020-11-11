@@ -8,8 +8,10 @@ public class Town : ScriptableObject
     [Header("General")]
     public int townID;
     public string townName;
+    public string townDescription;
     public float difficultyLevel;
     public Area[] townAreas;
     public Mission[] townMissions;
     public GameObject townLevel;
+    public bool unlocked;
 }
