@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb879fb576aa714bac1fe49b5ea4a8c, type: 3}
+  m_Name: Database
+  m_EditorClassIdentifier: 
+  Weapons:
+  - {fileID: 11400000, guid: b313f93c8dbace74ca6e42ce6480b5b6, type: 2}
+  - {fileID: 11400000, guid: ea74630a53a5fac4dbe458ce38fa14e7, type: 2}
+  - {fileID: 11400000, guid: 6b29cbbc47e85f840bb557c383bf6d4d, type: 2}
+  - {fileID: 11400000, guid: 20c7629f0a4d0a54daed225a4d638a77, type: 2}
+  - {fileID: 11400000, guid: bc0414388558a2c4c9f9badbf3674ee7, type: 2}
+  Artifacts:
+  - {fileID: 11400000, guid: 4aa9bb3b5c3451447a2c94d82b03f115, type: 2}
+  - {fileID: 11400000, guid: 95b53a8fc94c62442a42ee09fa3e03c0, type: 2}
+  Consumables:
+  - {fileID: 11400000, guid: 14a0d7c1a960caf44b9412a5e8cbcbfa, type: 2}
+  - {fileID: 11400000, guid: 0496fc01dbfd3484d88fcea913fe180e, type: 2}

@@ -17,13 +17,13 @@ public class Artifact : Equipament
 
     public override void _Init_()
     {
-        _attribute = new float[Enum.GetValues(typeof(Attribute)).Length];
-        _attributeBonusOrder = new int[_attribute.Length];
+        attribute = new int[Enum.GetValues(typeof(Attribute)).Length];
+        _attributeBonusOrder = new int[attribute.Length];
 
         RandomizeBonusOrder();
 
         for(int i = 0; i < stars; i++)
-            _attribute[_attributeBonusOrder[i]] = 1;
+            attribute[_attributeBonusOrder[i]] = 1;
 
         maxHP = Random.Range(_maxHpBounds.x, _maxHpBounds.y);
         defFlat = Random.Range(_defFlatBounds.x, _defFlatBounds.y);

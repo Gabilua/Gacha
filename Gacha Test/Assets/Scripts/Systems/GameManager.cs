@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     public MissionManager missions;
     public PlayerController player;
+    public Inventory playerInventory;
     public SaveData save;
     [SerializeField] Transform generatedLevel, townLevel, spawnedMobGroups, playerSpawn;
     [SerializeField] GameObject currentTownLevel;
@@ -41,6 +42,31 @@ public class GameManager : MonoBehaviour
     {
         if (!instance)
             instance = this;
+
+        playerInventory.Load();
+    }
+
+    private void OnEnable()
+    {
+        /*for(int i = 0; i < 10; i++)
+        {
+            playerInventory.AddRandomConsumable();
+            playerInventory.AddRandomWeapon();
+            playerInventory.AddRandomArtifact();
+        }
+        */
+    }
+
+    private void Update()
+    {
+
+    }
+
+    private void OnApplicationQuit()
+    {
+        playerInventory.Save();
+
+        playerInventory.ClearInventory();
     }
     #endregion
 
