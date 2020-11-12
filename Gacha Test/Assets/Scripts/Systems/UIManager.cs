@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentCharacterLevelDisplay;
     [SerializeField] TextMeshProUGUI royalsCounter;
     [SerializeField] TextMeshProUGUI stardustCounter;
-    [SerializeField] GameObject partyCharacterUIPrefab, characterScreenRosterElementPrefab, partyScreenRosterElementPrefab, damageDisplayPrefab;
+    [SerializeField] GameObject partyCharacterUIPrefab, characterScreenRosterElementPrefab, partyScreenRosterElementPrefab, damageDisplayPrefab, lootListElementPrefab;
     public RectTransform partyCharacters;
 
     [Header("Combat HUD")]
@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI missionTabTownName, innScreenTownName;
     [SerializeField] TextMeshProUGUI royalsRewardDisplay;
     [SerializeField] TextMeshProUGUI stardustRewardDisplay;
-    public RectTransform missionList, characterScreenRoster, partyScreenRoster;
+    public RectTransform missionList, characterScreenRoster, partyScreenRoster, lootList;
     [SerializeField] Animator characterScreenThumbDisplay;
     [SerializeField] GameObject[] characterScreenAvatars;
     [SerializeField] GameObject[] characterScreenSessionContent;
@@ -470,6 +470,12 @@ public class UIManager : MonoBehaviour
         {
             PlaceCameraOnSpecifiedCharacter(temporaryPartyComposition[i], i);
         }
+    }
+
+    public void NewLootListElement(int amount, string name)
+    {
+        GameObject ui = Instantiate(lootListElementPrefab, lootList);
+        ui.GetComponent<LootDisplayUI>().SetupLootUI(amount, name);
     }
 
     public void PlaceCameraOnSpecifiedCharacter(int avatarIndex, int slotIndex)

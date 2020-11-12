@@ -16,7 +16,7 @@ MonoBehaviour:
   missionTitle: Exterminate
   missionDescription: Defeat All Enemies
   icon: {fileID: 21300000, guid: c06cfb1e7670b4c5aab444df933905b7, type: 3}
-  tileAmountInterval: {x: 2, y: 3}
+  tileAmountInterval: {x: 3, y: 3}
   mobGroups:
   - {fileID: 939224747237068634, guid: bf6daadee05718f4ba9ee64b9c7a4913, type: 3}
   mobAmount: 3

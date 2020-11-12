@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68057a99a1538254e8e46dbf907666b1, type: 3}
   m_Name: Save01
   m_EditorClassIdentifier: 
-  stardust: 15
-  royals: 25000
+  stardust: 24
+  royals: 20000
   allCharacters:
   - {fileID: 11400000, guid: 99b84171eaa57ed4ca4a9c4780b11af5, type: 2}
   - {fileID: 11400000, guid: c89b2269422240d4c8da66e5f9b15913, type: 2}
@@ -27,7 +27,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 20c7629f0a4d0a54daed225a4d638a77, type: 2}
   - {fileID: 11400000, guid: bc0414388558a2c4c9f9badbf3674ee7, type: 2}
   currentParty:
-  - {fileID: 11400000, guid: 99b84171eaa57ed4ca4a9c4780b11af5, type: 2}
+  - {fileID: 11400000, guid: 1aefc269363c34c4993e5363e4347e6b, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

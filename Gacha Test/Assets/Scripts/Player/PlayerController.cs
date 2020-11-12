@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     public Transform baseAtkProjectileBarrel;
 
     [Header("VFX")]
-    [SerializeField] ParticleSystem runFX;
+    [SerializeField] ParticleSystem[] runFX;
     [SerializeField] ParticleSystem dashFX;
     public ParticleSystem[] atkFX;
 
@@ -47,6 +47,30 @@ public class PlayerController : MonoBehaviour
     float attackTimer, aggroTimer, dodgeTimer, dodgeCooldown;
     float x, z, distToGround, dir;
     Vector3 addedForce, nextPos;
+
+    void RunFXMatchGroundMaterial()
+    {
+        RaycastHit hit;
+        int g = 0;
+
+        if (Physics.Raycast(center.transform.position, -transform.up, out hit, groundLevel, groundLayer))
+        {
+            Material groundMat = hit.collider.GetComponent<MeshRenderer>().material;
+
+            if (groundMat.name == "Grass Road (Instance)")
+                g = 0;
+            else if (groundMat.name == "Ice Road (Instance)")
+                g = 1;
+        }
+
+        if (isGrounded && isMoving)
+        {
+            if (!runFX[g].isPlaying)
+                runFX[g].Play();
+        }
+        else
+            runFX[g].Stop();
+    }
 
     // Here we check if the controller's bottom is touching valid Ground;
     void GroundCheck()
@@ -61,13 +85,7 @@ public class PlayerController : MonoBehaviour
         else
             isGrounded = false;
 
-        if (isGrounded && isMoving)
-        {
-            if (!runFX.isPlaying)
-                runFX.Play();
-        }
-        else
-            runFX.Stop();
+        RunFXMatchGroundMaterial();
 
         anim.SetBool("IsGrounded", isGrounded);
     }
@@ -150,8 +168,8 @@ public class PlayerController : MonoBehaviour
     // Here we check for input;
     void InputCheck()
     {
-        x = Input.GetAxis(playerInput[0]) + (joystick.Horizontal / 5);
-        z = Input.GetAxis(playerInput[1]) + (joystick.Vertical / 5);
+        x = Input.GetAxis(playerInput[0]) + (joystick.Horizontal / 3);
+        z = Input.GetAxis(playerInput[1]) + (joystick.Vertical / 3);
 
         anim.SetBool("IsIdle", isIdle);
 

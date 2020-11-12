@@ -191,9 +191,9 @@ public class GameManager : MonoBehaviour
         player.Spawn(playerSpawn);
     }
     void Rewards()
-    {       
-        EarnRoyals(currentMissionRoyalsReward);
-        EarnStardust(currentMissionStardustReward);
+    {
+        StartCoroutine("EarnRoyalsDelayed", currentMissionRoyalsReward);
+        StartCoroutine("EarnStardustDelayed", currentMissionStardustReward);
     }
     void GenerateLevel()
     {
@@ -317,14 +317,32 @@ public class GameManager : MonoBehaviour
     {
         save.currentParty = player.combat.currentParty;
     }
+    public IEnumerator EarnStardustDelayed(int amount)
+    {
+        yield return new WaitForSeconds(1.5f);
+        EarnStardust(amount);
+    }
 
     void EarnStardust(int amount)
     {
         save.stardust += amount;
+
+        if (amount > 0)
+            UIManager.instance.NewLootListElement(amount, "Stardust");
     }
+
+    public IEnumerator EarnRoyalsDelayed(int amount)
+    {
+        yield return new WaitForSeconds(1.5f);
+        EarnRoyals(amount);
+    }
+
     void EarnRoyals(int amount)
     {
         save.royals += amount;
+
+        if (amount > 0)
+            UIManager.instance.NewLootListElement(amount, "Royals");
     }
     void EarnCharacterExperience(int i, int amount)
     {
