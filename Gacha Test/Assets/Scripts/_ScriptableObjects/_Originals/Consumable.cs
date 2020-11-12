@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Consumable", menuName = "Consumable")]
 public class Consumable : ScriptableObject
 {
-    protected int id;
+    public int ID;
 
-    protected int amount;
-
-    public void GetConsumable() => amount++;
-
-    public virtual void UseConsumable() => amount--;
+    [TextArea(15, 20)]
+    public string _description;
 }

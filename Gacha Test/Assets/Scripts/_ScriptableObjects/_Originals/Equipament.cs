@@ -6,6 +6,7 @@ public enum Attribute { MaxHp, DefFlat, DefPercentage, AtkFlat, AtkPercentage, S
 
 public abstract class Equipament : ScriptableObject
 {
+    public int ID;
     public string equipamentName;
     public int level;
     public int currentExperience;
@@ -21,17 +22,17 @@ public abstract class Equipament : ScriptableObject
     [SerializeField] protected float critDmg;
     [SerializeField] protected float recharge;
 
-    public float MaxHp => maxHP * _attribute[(int)Attribute.MaxHp];
-    public float DefFlat => defFlat * _attribute[(int)Attribute.DefFlat];
-    public float DefPercentage => defPercentage * _attribute[(int)Attribute.DefPercentage];
-    public float AtkFlat => atkFlat * _attribute[(int)Attribute.AtkFlat];
-    public float AtkPercentage => atkPercentage * _attribute[(int)Attribute.AtkPercentage];
-    public float Skill => skill * _attribute[(int)Attribute.Skill];
-    public float CritRate => critRate * _attribute[(int)Attribute.CritRate];
-    public float CritDmg => critDmg * _attribute[(int)Attribute.CritDmg];
-    public float Recharge => recharge * _attribute[(int)Attribute.Recharge];
+    public float MaxHp => maxHP * attribute[(int)Attribute.MaxHp];
+    public float DefFlat => defFlat * attribute[(int)Attribute.DefFlat];
+    public float DefPercentage => defPercentage * attribute[(int)Attribute.DefPercentage];
+    public float AtkFlat => atkFlat * attribute[(int)Attribute.AtkFlat];
+    public float AtkPercentage => atkPercentage * attribute[(int)Attribute.AtkPercentage];
+    public float Skill => skill * attribute[(int)Attribute.Skill];
+    public float CritRate => critRate * attribute[(int)Attribute.CritRate];
+    public float CritDmg => critDmg * attribute[(int)Attribute.CritDmg];
+    public float Recharge => recharge * attribute[(int)Attribute.Recharge];
 
-    protected float[] _attribute;
+    public int[] attribute;
     protected int[] _attributeBonusOrder;
 
     public abstract void _Init_();
@@ -43,7 +44,7 @@ public abstract class Equipament : ScriptableObject
         if (_attributeBonusOrder == null)
             return;
 
-        int[] _attributeOrder = new int[_attribute.Length];
+        int[] _attributeOrder = new int[attribute.Length];
         for (int i = 0; i < _attributeOrder.Length; i++)
             _attributeOrder[i] = i;
 
