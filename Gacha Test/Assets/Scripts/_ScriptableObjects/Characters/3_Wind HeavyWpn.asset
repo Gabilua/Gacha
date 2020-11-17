@@ -38,7 +38,7 @@ MonoBehaviour:
   - 1
   - 1.5
   - 2
-  startWeapon: {fileID: 11400000, guid: ea74630a53a5fac4dbe458ce38fa14e7, type: 2}
+  startWeapon: {fileID: 11400000, guid: 575c918c16ab0184cb5505df4ee62f57, type: 2}
   baseAtkProjectile: {fileID: 0}
   animatorAvatar: {fileID: 9000000, guid: 997a9c545ec5b8842ae7082e75be2b4e, type: 3}
   baseAtkCD: 2

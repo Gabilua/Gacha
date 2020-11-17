@@ -16,9 +16,8 @@ MonoBehaviour:
   ID: 1
   element: 1
   weaponType: 3
-  stars: 1
-  collection: 0
-  currentWeapon: {fileID: 11400000, guid: b313f93c8dbace74ca6e42ce6480b5b6, type: 2}
+  stars: 4
+  currentWeapon: {fileID: 11400000, guid: e2e64ad5e07f6a74391a4647fb368af9, type: 2}
   currentType1Artifact: {fileID: 0}
   currentType2Artifact: {fileID: 0}
   currentType3Artifact: {fileID: 0}
