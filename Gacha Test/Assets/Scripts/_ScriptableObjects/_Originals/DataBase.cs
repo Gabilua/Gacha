@@ -16,6 +16,11 @@ public class DataBase : ScriptableObject, ISerializationCallbackReceiver
     public Consumable[] Consumables;
     public Dictionary<Consumable, int> GetConsumableId = new Dictionary<Consumable, int>();
     public Dictionary<int, Consumable> GetConsumable = new Dictionary<int, Consumable>();
+
+    public Character[] Characters;
+    public Dictionary<Character, int> GetCharacterId = new Dictionary<Character, int>();
+    public Dictionary<int, Character> GetCharacter = new Dictionary<int, Character>();
+
     public void OnAfterDeserialize()
     {
         GetWeaponId = new Dictionary<Weapon, int>();
@@ -40,6 +45,14 @@ public class DataBase : ScriptableObject, ISerializationCallbackReceiver
         {
             GetConsumableId.Add(Consumables[i], i);
             GetConsumable.Add(i, Consumables[i]);
+        }
+
+        GetCharacterId = new Dictionary<Character, int>();
+        GetCharacter = new Dictionary<int, Character>();
+        for (int i = 0; i < Characters.Length; i++)
+        {
+            GetCharacterId.Add(Characters[i], i);
+            GetCharacter.Add(i, Characters[i]);
         }
     }
 

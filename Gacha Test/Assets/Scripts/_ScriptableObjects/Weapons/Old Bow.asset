@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee497eabe93e55478dea34a1aca663a, type: 3}
   m_Name: Old Bow
   m_EditorClassIdentifier: 
+  ID: 1
   equipamentName: Old Bow
   level: 0
   currentExperience: 0
   stars: 1
+  collection: 0
   maxHP: 5
   defFlat: 5
   defPercentage: 5
@@ -25,7 +27,7 @@ MonoBehaviour:
   critRate: 5
   critDmg: 5
   recharge: 5
-  ID: 1
+  attribute: 
   weaponType: 3
   inGameGFX: {fileID: 592676674443742866, guid: d5617a59faa72754aa066ae7593d5b41,
     type: 3}

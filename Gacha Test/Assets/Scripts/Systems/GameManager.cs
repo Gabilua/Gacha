@@ -65,7 +65,6 @@ public class GameManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         playerInventory.Save();
-
         playerInventory.ClearInventory();
     }
     #endregion

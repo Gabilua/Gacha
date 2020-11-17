@@ -24,3 +24,9 @@ MonoBehaviour:
   Consumables:
   - {fileID: 11400000, guid: 14a0d7c1a960caf44b9412a5e8cbcbfa, type: 2}
   - {fileID: 11400000, guid: 0496fc01dbfd3484d88fcea913fe180e, type: 2}
+  Characters:
+  - {fileID: 11400000, guid: 99b84171eaa57ed4ca4a9c4780b11af5, type: 2}
+  - {fileID: 11400000, guid: c89b2269422240d4c8da66e5f9b15913, type: 2}
+  - {fileID: 11400000, guid: 1aefc269363c34c4993e5363e4347e6b, type: 2}
+  - {fileID: 11400000, guid: a9c6a6e3f9d3c4141ad8c6fe1642f6a0, type: 2}
+  - {fileID: 11400000, guid: 7d0b10ddf41e22c4fbd11027505df98a, type: 2}

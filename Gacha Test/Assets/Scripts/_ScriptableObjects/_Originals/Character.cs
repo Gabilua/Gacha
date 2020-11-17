@@ -10,7 +10,8 @@ public class Character : ScriptableObject
     public int ID;
     public int element;
     public int weaponType;
-    public float stars;
+    public int stars = 1;
+    public CollectionName collection = CollectionName.Default;
 
     public Weapon currentWeapon;
     public Artifact currentType1Artifact;

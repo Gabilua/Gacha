@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee497eabe93e55478dea34a1aca663a, type: 3}
   m_Name: Old Greatsword
   m_EditorClassIdentifier: 
+  ID: 3
   equipamentName: Old Greatsword
   level: 0
   currentExperience: 0
   stars: 1
+  collection: 0
   maxHP: 5
   defFlat: 5
   defPercentage: 5
@@ -25,7 +27,7 @@ MonoBehaviour:
   critRate: 5
   critDmg: 5
   recharge: 5
-  ID: 3
+  attribute: 
   weaponType: 1
   inGameGFX: {fileID: 5970865713292142582, guid: 00c8f442a4b6e4542b09959143e8f468,
     type: 3}

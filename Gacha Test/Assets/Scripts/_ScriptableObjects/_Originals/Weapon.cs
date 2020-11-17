@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapons")]
 public class Weapon : Equipament
 {
-    public int ID;
     public int weaponType;
     public GameObject inGameGFX;
 

@@ -3,6 +3,7 @@ using UnityEngine.Analytics;
 using Random = UnityEngine.Random;
 
 public enum Attribute { MaxHp, DefFlat, DefPercentage, AtkFlat, AtkPercentage, Skill, CritRate, CritDmg, Recharge }
+public enum CollectionName { Default}
 
 public abstract class Equipament : ScriptableObject
 {
@@ -10,7 +11,8 @@ public abstract class Equipament : ScriptableObject
     public string equipamentName;
     public int level;
     public int currentExperience;
-    public float stars = 1;
+    public int stars = 1;
+    public CollectionName collection = CollectionName.Default;
 
     [SerializeField] protected float maxHP;
     [SerializeField] protected float defFlat;

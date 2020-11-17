@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee497eabe93e55478dea34a1aca663a, type: 3}
   m_Name: Old Wand
   m_EditorClassIdentifier: 
+  ID: 2
   equipamentName: Old Wand
   level: 0
   currentExperience: 0
   stars: 1
+  collection: 0
   maxHP: 5
   defFlat: 5
   defPercentage: 5
@@ -25,7 +27,7 @@ MonoBehaviour:
   critRate: 5
   critDmg: 5
   recharge: 5
-  ID: 2
+  attribute: 
   weaponType: 2
   inGameGFX: {fileID: 7001925251694121076, guid: 383348e327eb9c9489cdcbbf4b3bada0,
     type: 3}

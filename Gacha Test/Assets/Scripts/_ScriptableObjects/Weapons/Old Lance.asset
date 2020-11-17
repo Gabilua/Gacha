@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee497eabe93e55478dea34a1aca663a, type: 3}
   m_Name: Old Lance
   m_EditorClassIdentifier: 
+  ID: 4
   equipamentName: Old Lance
   level: 0
   currentExperience: 0
   stars: 1
+  collection: 0
   maxHP: 5
   defFlat: 5
   defPercentage: 5
@@ -25,7 +27,7 @@ MonoBehaviour:
   critRate: 5
   critDmg: 5
   recharge: 5
-  ID: 4
+  attribute: 
   weaponType: 4
   inGameGFX: {fileID: 4581002614061897581, guid: c39773026b7664b46b04f1bb4f5f2aa7,
     type: 3}
