@@ -82,15 +82,17 @@ public class PlayerCombat : MonoBehaviour
         if (activeCharacterInfo != null)
             WriteBackToCharacters();
 
-        foreach (var avatar in characterAvatars)
+        for (int j = 0; j < characterAvatars.Length; j++)
         {
-            avatar.gameObject.SetActive(false);
+            if (characterAvatars[j].gameObject == characterAvatars[i].gameObject)
+            {
+                characterAvatars[i].gameObject.SetActive(true);
+                activeCharacterAvatar = characterAvatars[i];
+                activeCharacterInfo = characterInfo[i];
+            }
+            else
+                characterAvatars[j].gameObject.SetActive(false);
         }
-
-        activeCharacterAvatar = characterAvatars[i];
-        activeCharacterInfo = characterInfo[i];
-
-        activeCharacterAvatar.gameObject.SetActive(true);
 
         SetupAttributes();
         SetupCharacterAvatar();
