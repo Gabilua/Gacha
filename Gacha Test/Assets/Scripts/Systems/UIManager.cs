@@ -340,7 +340,7 @@ public class UIManager : MonoBehaviour
 
 
         // update weapon stats
-        characterScreenWpnStats[0].text = GameManager.instance.player.combat.characterInfo[i].currentWeapon.equipamentName;
+        characterScreenWpnStats[0].text = GameManager.instance.player.combat.characterInfo[i].currentWeapon.name;
         characterScreenWpnStats[1].text = GameManager.instance.player.combat.characterInfo[i].currentWeapon.level.ToString();
         weaponScreenStarDisplay.fillAmount = GameManager.instance.player.combat.characterInfo[i].currentWeapon.stars / 5f;
         characterScreenWpnStats[2].text = "MainStat";

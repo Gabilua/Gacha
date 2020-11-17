@@ -17,7 +17,7 @@ MonoBehaviour:
   element: 0
   weaponType: 0
   stars: 4
-  currentWeapon: {fileID: 11400000, guid: 20c7629f0a4d0a54daed225a4d638a77, type: 2}
+  currentWeapon: {fileID: 11400000, guid: 88346fff717babd459d24d7fc0762eca, type: 2}
   currentType1Artifact: {fileID: 0}
   currentType2Artifact: {fileID: 0}
   currentType3Artifact: {fileID: 0}
