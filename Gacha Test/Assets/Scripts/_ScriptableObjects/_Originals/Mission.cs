@@ -10,6 +10,7 @@ public class Mission : ScriptableObject
     public string missionTitle;
     public string missionDescription;
     public Sprite icon;
+    public Color iconColor;
 
     [Header("Level Configuration")]
     public Vector2 tileAmountInterval;
@@ -17,6 +18,7 @@ public class Mission : ScriptableObject
     [Header("Enemy Configuration")]
     public GameObject[] mobGroups;
     public int mobAmount;
+    public int waveNumber;
 
     [Header("Reward Configuration")]
     public Vector2 royalsAmountInterval;

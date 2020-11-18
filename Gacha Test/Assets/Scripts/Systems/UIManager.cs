@@ -257,6 +257,12 @@ public class UIManager : MonoBehaviour
                     missionProgress.text = remainingEnemies.ToString()+"/" + GameManager.instance.missionEnemyAmount.ToString();
                 }
                 break;
+            case 1:
+                {
+                    int remainingWaves = GameManager.instance.currentMission.waveNumber - GameManager.instance.remainingWaves;
+                    missionProgress.text = remainingWaves.ToString() + "/" + GameManager.instance.currentMission.waveNumber.ToString();
+                }
+                break;
         }
     }
 

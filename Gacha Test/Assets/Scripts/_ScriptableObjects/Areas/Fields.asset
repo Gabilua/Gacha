@@ -19,4 +19,6 @@ MonoBehaviour:
   startTile: {fileID: 3054348829997917187, guid: c8d5fdcbd6861d7488ec75f6b4dac9ea,
     type: 3}
   endTile: {fileID: 3054348829997917187, guid: c106b496c62fd8841a162c32cae6d09d, type: 3}
+  defenseTile: {fileID: 3054348829997917187, guid: 4bb2d2a23619bae4ca4ab2520b522137,
+    type: 3}
   tileLenght: 80

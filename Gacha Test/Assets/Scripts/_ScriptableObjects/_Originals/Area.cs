@@ -9,6 +9,6 @@ public class Area : ScriptableObject
     public int areaID;
     public string areaName;
     public GameObject[] tilePool;
-    public GameObject startTile, endTile;
+    public GameObject startTile, endTile, defenseTile;
     public float tileLenght;
 }

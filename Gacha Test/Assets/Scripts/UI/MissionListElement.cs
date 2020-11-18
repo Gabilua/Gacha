@@ -33,8 +33,10 @@ public class MissionListElement : MonoBehaviour
 
     public void SetupMissionUI()
     {
+        myMission = GameManager.instance.ChooseMissionTypeBasedOnCurrentTown();
         missionArea = GameManager.instance.ChooseAreaForMissionBasedOnCurrentTown();
         icon.sprite = myMission.icon;
+        icon.color = myMission.iconColor;
         title.text = missionArea.areaName + " - "+ myMission.missionTitle;
         description.text = myMission.missionDescription;
 

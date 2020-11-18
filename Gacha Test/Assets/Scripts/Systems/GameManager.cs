@@ -35,7 +35,9 @@ public class GameManager : MonoBehaviour
     public bool missionSuccess;
 
     //-- Exterminate --
-    [HideInInspector] public int remainingEnemies;
+     public int remainingEnemies;
+    //-- Exterminate --
+     public int remainingWaves;
 
     #region Unity Methods
     private void Awake()
@@ -193,6 +195,10 @@ public class GameManager : MonoBehaviour
     {
         return missions.currentTown.townAreas[Random.Range(0, missions.currentTown.townAreas.Length)];
     }
+    public Mission ChooseMissionTypeBasedOnCurrentTown()
+    {
+        return missions.currentTown.townMissions[Random.Range(0, missions.currentTown.townMissions.Length)];
+    }
     public void EndMission()
     {
         UIManager.instance.StartCoroutine("LoadingScreen", 2f);
@@ -222,35 +228,46 @@ public class GameManager : MonoBehaviour
     }
     void GenerateLevel()
     {
-        missionTileAmount = Random.Range(Mathf.FloorToInt(currentMission.tileAmountInterval.x), Mathf.FloorToInt(currentMission.tileAmountInterval.y + Mathf.CeilToInt(missions.currentTown.difficultyLevel)));
-
-        for (int i = 0; i < missionTileAmount; i++)
+        if(currentMission.missionType == 0)
         {
-            Vector3 tilePos = new Vector3((i * currentMissionArea.tileLenght) + transform.position.x, transform.position.y, transform.position.z);
+            missionTileAmount = Random.Range(Mathf.FloorToInt(currentMission.tileAmountInterval.x), Mathf.FloorToInt(currentMission.tileAmountInterval.y + Mathf.CeilToInt(missions.currentTown.difficultyLevel)));
 
-            if (i == 0)
+            for (int i = 0; i < missionTileAmount; i++)
             {
-                GameObject tile = Instantiate(currentMissionArea.startTile, tilePos, transform.rotation);
-                tile.transform.SetParent(generatedLevel);
-            }
-            else if(i == (missionTileAmount - 1))
-            {
-                GameObject tile = Instantiate(currentMissionArea.endTile, tilePos, transform.rotation);
-                tile.transform.SetParent(generatedLevel);
+                Vector3 tilePos = new Vector3((i * currentMissionArea.tileLenght) + transform.position.x, transform.position.y, transform.position.z);
 
-                generatedLevel.GetComponent<NavMeshSurface>().BuildNavMesh();
-                levelGenerated = true;
+                if (i == 0)
+                {
+                    GameObject tile = Instantiate(currentMissionArea.startTile, tilePos, transform.rotation);
+                    tile.transform.SetParent(generatedLevel);
+                }
+                else if (i == (missionTileAmount - 1))
+                {
+                    GameObject tile = Instantiate(currentMissionArea.endTile, tilePos, transform.rotation);
+                    tile.transform.SetParent(generatedLevel);
+
+                    generatedLevel.GetComponent<NavMeshSurface>().BuildNavMesh();
+                    levelGenerated = true;
+                }
+                else
+                {
+                    int r = Random.Range(0, currentMissionArea.tilePool.Length);
+                    GameObject tile = Instantiate(currentMissionArea.tilePool[r], tilePos, transform.rotation);
+                    tile.transform.SetParent(generatedLevel);
+                }
             }
-            else
-            {
-                int r = Random.Range(0, currentMissionArea.tilePool.Length); 
-                GameObject tile = Instantiate(currentMissionArea.tilePool[r], tilePos, transform.rotation);
-                tile.transform.SetParent(generatedLevel);
-            }
+
+            if (levelGenerated)
+                SpawnEnemies();
         }
+        else if(currentMission.missionType == 1)
+        {
+            GameObject tile = Instantiate(currentMissionArea.defenseTile, transform.position, transform.rotation);
+            tile.transform.SetParent(generatedLevel);
 
-        if (levelGenerated)
+            generatedLevel.GetComponent<NavMeshSurface>().BuildNavMesh();
             SpawnEnemies();
+        }
     }
     void SpawnEnemies()
     {
@@ -269,6 +286,25 @@ public class GameManager : MonoBehaviour
             }
 
             missionEnemyAmount = spawnedMobGroups.GetComponentsInChildren<EnemyController>().Length;
+        }
+        else if(currentMission.missionType == 1)
+        {
+           if(missionEnemyAmount <= 0)
+            {
+                Vector3 enemySpawnPosition = new Vector3(transform.position.x + 35, transform.position.y, transform.position.z);
+                int r = Random.Range(0, currentMission.mobGroups.Length);
+
+                GameObject mob = Instantiate(currentMission.mobGroups[r], enemySpawnPosition, transform.rotation);
+                mob.transform.SetParent(spawnedMobGroups);
+
+                remainingEnemies += spawnedMobGroups.GetComponentsInChildren<EnemyController>().Length;
+
+                foreach (var enemy in spawnedMobGroups.GetComponentsInChildren<EnemyController>())
+                {
+                    enemy.objectiveTarget = player.transform;
+                    enemy.hasObjective = true;
+                }
+            }
         }
     }
     void DestroyLevel()
@@ -307,6 +343,11 @@ public class GameManager : MonoBehaviour
                     remainingEnemies = missionEnemyAmount;
                 }
                 break;
+            case 1:
+                {
+                    remainingWaves = currentMission.waveNumber-1;
+                }
+                break;
         }
     }
     void CheckMissionProgress()
@@ -319,6 +360,12 @@ public class GameManager : MonoBehaviour
                         missionSuccess = true;
                 }
                 break;
+            case 1:
+                {
+                    if (remainingWaves <= 0 && remainingEnemies <= 0)
+                        missionSuccess = true;
+                }
+                break;
         }
     }
     public void EnemyKilled()
@@ -328,6 +375,22 @@ public class GameManager : MonoBehaviour
             case 0:
                 {
                     remainingEnemies--;
+                    UIManager.instance.UpdateMissionParameters();
+                }
+                break;
+            case 1:
+                {
+                    remainingEnemies--;
+
+                    if (remainingEnemies <= 0)
+                    {
+                        if (remainingWaves > 0)
+                        {
+                            Invoke("SpawnEnemies", Random.Range(3, 6));
+                            remainingWaves--;
+                        }
+                    }
+
                     UIManager.instance.UpdateMissionParameters();
                 }
                 break;
