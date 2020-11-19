@@ -24,7 +24,7 @@ public class SecretHolder : MonoBehaviour
 
     void RollSecret()
     {
-        if(Random.value <= secretChance)
+        if((Random.value*100) <= secretChance)
         {
             if (isChest)
                 myChest.RollRandomChestLevel();

@@ -10,6 +10,11 @@ public class MissionManager : MonoBehaviour
 
     private void Start()
     {
+        ResetMissions();
+    }
+
+    public void ResetMissions()
+    {
         DeleteExistingMissions();
         GenerateMissions(5);
     }
@@ -22,7 +27,7 @@ public class MissionManager : MonoBehaviour
         }
     }
 
-    void GenerateMissions(int amount)
+    public void GenerateMissions(int amount)
     {
         for (int i = 0; i < amount; i++)
         {

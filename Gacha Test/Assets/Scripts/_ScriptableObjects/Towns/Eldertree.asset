@@ -17,10 +17,10 @@ MonoBehaviour:
   townDescription: ice city
   difficultyLevel: 1
   townAreas:
-  - {fileID: 11400000, guid: 1196904603029aa4bb12655ed7dcd19c, type: 2}
-  - {fileID: 11400000, guid: 7b24e806e1dc57743ba394c7734b2108, type: 2}
+  - {fileID: 11400000, guid: 6894d45d60d38294b953ec97bff903c6, type: 2}
   townMissions:
   - {fileID: 11400000, guid: 155bb2be358d5ea41abdfd1c9e836c3f, type: 2}
+  - {fileID: 11400000, guid: 7310fb3fe76e66b49a4092f9388f1017, type: 2}
   townLevel: {fileID: 608006319382010309, guid: e8fe2d2ae6da62640adf3c1142117f54,
     type: 3}
   unlocked: 1

@@ -15,6 +15,7 @@ public class PlayerCombat : MonoBehaviour
     public Character activeCharacterInfo;
 
     public ParticleSystem hitFX;
+    [SerializeField] ParticleSystem[] elementChangeFX;
     public GameObject deathFX;
 
     public bool isDead;
@@ -97,6 +98,8 @@ public class PlayerCombat : MonoBehaviour
         SetupAttributes();
         SetupCharacterAvatar();
         equipment.EquipmentSetup(i);
+
+        elementChangeFX[activeCharacterInfo.element].Play();
 
         UIManager.instance.UpdateCurrentCharacterLevelDisplay(level);
         UIManager.instance.UpdateCharacterScreenAvatar(i);

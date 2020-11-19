@@ -14,16 +14,7 @@ public class Chest : MonoBehaviour
 
     public void RollRandomChestLevel()
     {
-        float r = Random.value;
-
-        if (r <= chestLevelRarity[0])
-            chestLevel = 1;
-        else if(r > chestLevelRarity[0] && r <= chestLevelRarity[1])
-            chestLevel = 2;
-        else if (r > chestLevelRarity[1] && r <= chestLevelRarity[2])
-            chestLevel = 3;
-        else if (r > chestLevelRarity[2] && r <= chestLevelRarity[3])
-            chestLevel = 4;
+        chestLevel = Random.Range(1, 5);    
     }
 
     public void RollChestLevelAboveThisRarity(float rarity)

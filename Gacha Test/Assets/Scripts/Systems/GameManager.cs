@@ -124,6 +124,7 @@ public class GameManager : MonoBehaviour
         missions.currentTown = town;
         CreateTownLevel();
         player.Spawn(playerSpawn);
+        missions.ResetMissions();
     }
     void CreateTownLevel()
     {

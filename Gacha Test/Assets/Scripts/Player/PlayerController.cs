@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
             if (groundMat.name == "Grass Road (Instance)")
                 g = 0;
-            else if (groundMat.name == "Ice Road (Instance)")
+            else if (groundMat.name == "Ice Road (Instance)" || groundMat.name == "Ice Road" || groundMat.name == "Snow" || groundMat.name == "Snow (Instance)")
                 g = 1;
         }
 
