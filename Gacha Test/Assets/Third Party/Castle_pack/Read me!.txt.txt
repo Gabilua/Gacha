@@ -1,0 +1,24 @@
+Here the components you can add to your camera to match the look of the screenshots and videos.
+
+_Bloom and lens flares:
+Blend mode: screen
+Intensity: 1
+
+_Global fog:
+Distance fog: on
+Height fog: -14
+
+_Screen space AO:
+Intensity: 0.25
+Radius:0.25
+
+_Rendering path: deferred
+_Color space: gamma
+
+Character controller to move through the demo scene.
+
+
+Thank you and enjoy the pack!
+Red Panda
+
+

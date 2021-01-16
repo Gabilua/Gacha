@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentCharacterLevelDisplay;
     [SerializeField] TextMeshProUGUI royalsCounter;
     [SerializeField] TextMeshProUGUI stardustCounter;
-    [SerializeField] GameObject partyCharacterUIPrefab, characterScreenRosterElementPrefab, partyScreenRosterElementPrefab, damageDisplayPrefab, lootListElementPrefab;
+    [SerializeField] GameObject partyCharacterUIPrefab, characterScreenRosterElementPrefab, partyScreenRosterElementPrefab, damageDisplayPrefab, lootListElementPrefab, inventorySlotPrefab;
     public RectTransform partyCharacters;
 
     [Header("Combat HUD")]
@@ -46,6 +46,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] int[] temporaryPartyComposition;
     [SerializeField] MapIcon[] mapIcons;
     [SerializeField] TextMeshProUGUI mapTownName, mapTownDescription;
+    [SerializeField] RectTransform characterScreenInventoryHolder;
+    [SerializeField] GameObject characterInventorySection;
 
     [Header("Configurations")]
     public Color[] elementColors;
@@ -312,6 +314,8 @@ public class UIManager : MonoBehaviour
                 if (avatar.activeInHierarchy)
                     avatar.GetComponent<EquipmentManager>().Sheath();
             }
+
+            ToggleCharacterInventorySection(false);
         }
         else if (i == 1)
         {
@@ -320,6 +324,8 @@ public class UIManager : MonoBehaviour
                 if (avatar.activeInHierarchy)
                     avatar.GetComponent<EquipmentManager>().Unsheath();
             }
+
+            ToggleCharacterInventorySection(true);
         }
 
         foreach (var content in characterScreenSessionContent)
@@ -498,5 +504,17 @@ public class UIManager : MonoBehaviour
     {
         GameManager.instance.DeployParty(temporaryPartyComposition);
         TogglePartyScreen(false);
+    }
+
+    void ToggleCharacterInventorySection(bool state)
+    {
+        characterInventorySection.SetActive(state);
+    }
+
+    public void NewCharacterScreenInventorySlot(Weapon weapon)
+    {
+        GameObject ui = Instantiate(inventorySlotPrefab, characterScreenInventoryHolder);
+        ui.GetComponent<InventorySlot>().myWeapon = weapon;
+        ui.GetComponent<InventorySlot>().SetupSlot();
     }
 }
