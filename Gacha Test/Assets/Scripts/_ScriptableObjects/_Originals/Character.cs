@@ -9,7 +9,7 @@ public class Character : ScriptableObject
     public string characterName;
     public int ID;
     public int element;
-    public int weaponType;
+    public WeaponType weaponType;
     public int stars = 1;
     public CollectionName collection = CollectionName.Default;
 

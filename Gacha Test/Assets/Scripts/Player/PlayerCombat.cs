@@ -130,7 +130,7 @@ public class PlayerCombat : MonoBehaviour
         }
 
         player.anim.avatar = activeCharacterInfo.animatorAvatar;
-        player.anim.SetFloat("WeaponType", activeCharacterInfo.weaponType);
+        player.anim.SetFloat("WeaponType", (int) activeCharacterInfo.weaponType);
     }
 
     void Death()

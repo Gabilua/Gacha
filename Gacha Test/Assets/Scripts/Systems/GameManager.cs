@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -48,20 +50,16 @@ public class GameManager : MonoBehaviour
         playerInventory.Load();
     }
 
-    private void OnEnable()
-    {
-        /*for(int i = 0; i < 10; i++)
-        {
-            playerInventory.AddRandomConsumable();
-            playerInventory.AddRandomWeapon();
-            playerInventory.AddRandomArtifact();
-        }
-        */
-    }
-
     private void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playerInventory.Save();
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            playerInventory.ClearInventory();
+        }
     }
 
     private void OnApplicationQuit()
@@ -117,6 +115,7 @@ public class GameManager : MonoBehaviour
         UIManager.instance.PopulatePartyUI();
         SaveCurrentParty();
     }
+    
     public void TownChange(Town town)
     {
         DestroyTownLevel();
@@ -398,6 +397,29 @@ public class GameManager : MonoBehaviour
         }
 
         CheckMissionProgress();
+    }
+    #endregion
+
+    #region InventoryManagement
+    public void GetBannerDrop(ScriptableObject p_equipament)
+    {
+        Equipament equipament = p_equipament as Equipament;
+
+        Type type = p_equipament.GetType();
+        if (type.Equals(typeof(Weapon)))
+        {
+            Weapon weapon = new Weapon();
+            weapon = equipament as Weapon;
+            weapon._Init_();
+            playerInventory.AddWeapon(weapon);
+        }
+        else if (type.Equals(typeof(Artifact)))
+        {
+            Artifact artifact = new Artifact();
+            artifact = equipament as Artifact;
+            artifact._Init_();
+            playerInventory.AddArtifact(artifact);
+        }
     }
     #endregion
 

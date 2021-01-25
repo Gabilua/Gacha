@@ -57,4 +57,14 @@ public class DataBase : ScriptableObject, ISerializationCallbackReceiver
     }
 
     public void OnBeforeSerialize() { }
+
+    [ContextMenu("Set ID")]
+    public void SetID()
+    {
+        for(int i = 0; i < Weapons.Length; i++)
+            Weapons[i].ID = i;
+
+        for (int i = 0; i < Artifacts.Length; i++)
+            Artifacts[i].ID = i;
+    }
 }

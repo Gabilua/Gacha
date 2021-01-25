@@ -1,10 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
+public enum WeaponType {LightWeapon, HeavyWeapon, Catalyst, Bow, LongWeapon }
+
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapons")]
 public class Weapon : Equipament
 {
-    public int weaponType;
+    public WeaponType weaponType;
     public GameObject inGameGFX;
 
     public override void _Init_()

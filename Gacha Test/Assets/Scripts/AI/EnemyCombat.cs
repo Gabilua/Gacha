@@ -76,7 +76,7 @@ public class EnemyCombat : MonoBehaviour
         myMonster.anim.SetTrigger("Hurt");
         hitFX.Play();
 
-        GameManager.instance.StartCoroutine("HitStop", source.activeCharacterInfo.weaponType);
+        GameManager.instance.StartCoroutine("HitStop", (int)source.activeCharacterInfo.weaponType);
     }    
 
     public float BaseAtkDamage(string source)

@@ -85,6 +85,7 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver
         Consumable aux = dataBase.Consumables[Random.Range(0, dataBase.Consumables.Length)];
         AddConsumable(aux, 1);
     }
+    
     public void AddRandomWeapon()
     {
         Weapon aux = dataBase.Weapons[Random.Range(0, dataBase.Weapons.Length)];
@@ -97,6 +98,19 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver
         Artifact aux = dataBase.Artifacts[Random.Range(0, dataBase.Artifacts.Length)];
         aux._Init_();
         AddArtifact(aux);
+    }
+
+    public List<EquipamentSlot> GetWeaponsByType(WeaponType p_weaponType)
+    {
+        List<EquipamentSlot> result = new List<EquipamentSlot>();
+
+        foreach(EquipamentSlot weapon in WeaponContainer)
+        {
+            if ((weapon.equipament as Weapon).weaponType == p_weaponType)
+                result.Add(weapon);
+        }
+
+        return result;
     }
 }
 

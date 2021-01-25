@@ -17,6 +17,7 @@ MonoBehaviour:
   level: 0
   currentExperience: 0
   stars: 5
+  collection: 0
   maxHP: 5
   defFlat: 5
   defPercentage: 5
@@ -27,7 +28,6 @@ MonoBehaviour:
   critDmg: 5
   recharge: 5
   attribute: 
-  ID: 1
   weaponType: 3
   inGameGFX: {fileID: 592676674443742866, guid: 546ed4e985f2d6b438c739585b657b8c,
     type: 3}

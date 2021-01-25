@@ -7,13 +7,12 @@ public class GachaBanner : MonoBehaviour
 {
     [SerializeField] private CollectionsDictionary _collectionsDictionary;
 
-    [SerializeField] private float[] starRarity;
-    [SerializeField] private CollectionName[] collections;
-    [SerializeField] private float[] collectionRarity;
-
     [SerializeField] private SpecialDrop[] specialDrops;
+    [SerializeField] private float[] starRarity;
+    [SerializeField] private CollectionRoll[] _collections;
 
     private Button _button;
+    private GameManager _gameManager;
 
     private void Awake()
     {
@@ -21,10 +20,9 @@ public class GachaBanner : MonoBehaviour
         _button.onClick.AddListener(ClickBanner);
     }
 
-    public void Update()
+    private void Start()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        Debug.Log(GetDrop());
+        _gameManager = GameManager.instance;
     }
 
     public void ClickBanner() => Debug.Log(GetDrop());
@@ -36,53 +34,67 @@ public class GachaBanner : MonoBehaviour
         for (int i = 0; i < specialDrops.Length; i++)
             raritySum += specialDrops[i].rarity;
 
-        if (raritySum > 1.0f)
-            Debug.LogError("Rarity sum can't be over 1");
-
         float percentageRoll = Random.value;
 
         if(percentageRoll < raritySum)
         {
             int rollIndex = 0;
+            float percentageOffSet = 0;
+
             for (int i = 0; i < specialDrops.Length; i++)
-                if (specialDrops[i].rarity >= percentageRoll)
+            {
+                if (specialDrops[i].rarity + percentageOffSet >= percentageRoll)
                 {
                     rollIndex = i;
                     break;
                 }
+                else
+                    percentageOffSet += specialDrops[i].rarity;
+            }
 
             return specialDrops[rollIndex].GetRandom();
         }
         else
             return RollCollection();
-
     }
 
     private ScriptableObject RollCollection()
     {
         float percentageRoll = Random.value;
-        int stars = 0;
-        
+        float percentageOffSet = 0;
+       
+        int starsIndex = 0; 
         for(int i = 0; i < starRarity.Length; i++)
-            if(starRarity[i] >= percentageRoll)
+        {
+            if (starRarity[i] + percentageOffSet >= percentageRoll)
             {
-                stars = i;
+                starsIndex = i;
                 break;
             }
+            else
+                percentageOffSet += starRarity[i];
+        }
 
         percentageRoll = Random.value;
-        int collectionIndex = 0;
+        percentageOffSet = 0;
 
-        for (int i = 0; i < collectionRarity.Length; i++)
-            if (collectionRarity[i] >= percentageRoll)
+        int collectionIndex = 0;
+        for (int i = 0; i < _collections.Length; i++)
+        {
+            if (_collections[i].rarity + percentageOffSet >= percentageRoll)
             {
                 collectionIndex = i;
                 break;
             }
+            else
+                percentageOffSet += _collections[i].rarity;
+        }
 
-        int roll = Random.Range(0, _collectionsDictionary.collections[collections[collectionIndex]].dropsByStars[stars].Count);
-        
-        return _collectionsDictionary.collections[collections[collectionIndex]].dropsByStars[stars][roll];
+        int roll = Random.Range(0, _collectionsDictionary.collections[_collections[collectionIndex].collectionName].dropsByStars[starsIndex].Count);
+
+        GameManager.instance.GetBannerDrop(_collectionsDictionary.collections[_collections[collectionIndex].collectionName].dropsByStars[starsIndex][roll]);
+
+        return _collectionsDictionary.collections[_collections[collectionIndex].collectionName].dropsByStars[starsIndex][roll];
     }
 }
 
@@ -93,4 +105,11 @@ public struct SpecialDrop
     public ScriptableObject[] specialDropPrefabs;
 
     public ScriptableObject GetRandom() => specialDropPrefabs[Random.Range(0, specialDropPrefabs.Length)];
+}
+
+[Serializable]
+public struct CollectionRoll
+{
+    public CollectionName collectionName;
+    public float rarity;
 }

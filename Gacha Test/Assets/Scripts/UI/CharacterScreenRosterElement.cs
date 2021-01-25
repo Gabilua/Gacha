@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
@@ -20,5 +18,6 @@ public class CharacterScreenRosterElement : MonoBehaviour
     {
         UIManager.instance.UpdateCharacterScreenAvatar(myCharacter.ID);
         UIManager.instance.UpdateCharacterScreenSection(0);
+        UIManager.instance.UpdateCharacterWeaponIventory(myCharacter.weaponType);
     }
 }

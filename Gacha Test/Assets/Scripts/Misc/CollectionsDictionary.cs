@@ -26,12 +26,6 @@ public class CollectionsDictionary : MonoBehaviour
 
             collections[dataBase.Characters[i].collection].AddDrop(dataBase.Characters[i]);
         }
-
-        /*foreach(KeyValuePair<CollectionName, CollectionValue> entry in collections)
-        {
-            Debug.Log(entry.Key);
-            entry.Value.PrintValues();
-        }*/
     }
 }
 

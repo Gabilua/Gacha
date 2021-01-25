@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Analytics;
 using Random = UnityEngine.Random;
 
 public enum Attribute { MaxHp, DefFlat, DefPercentage, AtkFlat, AtkPercentage, Skill, CritRate, CritDmg, Recharge }

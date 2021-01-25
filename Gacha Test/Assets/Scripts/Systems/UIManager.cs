@@ -48,6 +48,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI mapTownName, mapTownDescription;
     [SerializeField] RectTransform characterScreenInventoryHolder;
     [SerializeField] GameObject characterInventorySection;
+    [SerializeField] InventoryWeaponPanel _inventoryWeaponPanel;
 
     [Header("Configurations")]
     public Color[] elementColors;
@@ -171,8 +172,10 @@ public class UIManager : MonoBehaviour
     {
         characterScreen.SetActive(!characterScreen.activeInHierarchy);
 
-        UpdateCharacterScreenAvatar(System.Array.IndexOf(GameManager.instance.player.combat.characterInfo, GameManager.instance.player.combat.activeCharacterInfo));
+        Character activeCharacter = GameManager.instance.player.combat.activeCharacterInfo;
+        UpdateCharacterScreenAvatar(System.Array.IndexOf(GameManager.instance.player.combat.characterInfo, activeCharacter));
         UpdateCharacterScreenSection(0);
+        UpdateCharacterWeaponIventory(activeCharacter.weaponType);
     }
 
     public void ToggleMapScreen(bool state)
@@ -362,7 +365,7 @@ public class UIManager : MonoBehaviour
     public void UpdateCharacterScreenAvatar(int i)
     {
         characterScreenThumbDisplay.avatar = GameManager.instance.player.combat.characterInfo[i].animatorAvatar;
-        characterScreenThumbDisplay.SetFloat("WeaponType", GameManager.instance.player.combat.characterInfo[i].weaponType);
+        characterScreenThumbDisplay.SetFloat("WeaponType", (int)GameManager.instance.player.combat.characterInfo[i].weaponType);
         characterScreenAvatars[i].GetComponent<EquipmentManager>().EquipmentSetup(i);
 
         foreach (var avatar in characterScreenAvatars)
@@ -374,6 +377,8 @@ public class UIManager : MonoBehaviour
 
         UpdadeCharacterScreenSectionContent(i);
     }
+
+    public void UpdateCharacterWeaponIventory(WeaponType p_weaponType) => _inventoryWeaponPanel.UpdateCharacterInfo(p_weaponType);
 
     void PopulateCharacterScreenRoster()
     {
