@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87dcac8002e4b043ade8288e12d9d16, type: 3}
+  m_Name: Fields
+  m_EditorClassIdentifier: 
+  areaID: 0
+  areaName: Fields
+  tilePool:
+  - {fileID: 3054348829997917187, guid: 8f5b5399f493b2947ba87742218f969f, type: 3}
+  startTile: {fileID: 3054348829997917187, guid: c8d5fdcbd6861d7488ec75f6b4dac9ea,
+    type: 3}
+  endTile: {fileID: 3054348829997917187, guid: c106b496c62fd8841a162c32cae6d09d, type: 3}
+  defenseTile: {fileID: 3054348829997917187, guid: 4bb2d2a23619bae4ca4ab2520b522137,
+    type: 3}
+  tileLenght: 80

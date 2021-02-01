@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6d660ed399db6429e15bce7ef461a5, type: 3}
+  m_Name: 0_Fire LightWpn
+  m_EditorClassIdentifier: 
+  characterName: Fire LightWpn
+  ID: 0
+  element: 0
+  weaponType: 0
+  stars: 4
+  currentWeapon: {fileID: 11400000, guid: 88346fff717babd459d24d7fc0762eca, type: 2}
+  currentType1Artifact: {fileID: 0}
+  currentType2Artifact: {fileID: 0}
+  currentType3Artifact: {fileID: 0}
+  currentType4Artifact: {fileID: 0}
+  currentType5Artifact: {fileID: 0}
+  level: 1
+  currentExperience: 0
+  currenthP: 2500
+  maxHP: 2500
+  atk: 75
+  def: 160
+  skill: 0
+  critRate: 5
+  critDmg: 50
+  recharge: 100
+  baseAtkMultipliers:
+  - 1
+  - 1.5
+  - 2
+  startWeapon: {fileID: 11400000, guid: 20c7629f0a4d0a54daed225a4d638a77, type: 2}
+  baseAtkProjectile: {fileID: 0}
+  animatorAvatar: {fileID: 9000000, guid: 276efd9af56bedb4d8eed5d54d9610e8, type: 3}
+  baseAtkCD: 1
+  icon: {fileID: 21300000, guid: 86b5167afdd3cce418dc7a7c2aaa7b13, type: 3}

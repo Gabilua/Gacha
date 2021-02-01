@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8365bd97dd8fd643b5dd7ad2542f31f, type: 3}
+  m_Name: TerraSlime
+  m_EditorClassIdentifier: 
+  monsterName: TerraSlime
+  ID: 0
+  element: 2
+  level: 10
+  currentExperience: 0
+  maxHP: 500
+  def: 10
+  atk: 200
+  skill: 0
+  critRate: 0
+  critDmg: 0
+  baseAtkMultipliers:
+  - 2
+  baseAtkProjectile: {fileID: 0}
+  baseAtkRate: 1.5
+  aggroRange: 10
+  engageDistance: 5
+  moveSpeed: 5
+  corpseTime: 1
